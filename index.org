@@ -1,0 +1,3 @@
+#+TITLE: Eric Magar
+#+OPTIONS: toc:nil
+
