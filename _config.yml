@@ -25,12 +25,13 @@ twitter_username: emagar
 github_username:  emagar
 
 # Build settings
-markdown: kramdown
-kramdown:
- input: GFM
- auto_ids: true
- hard_wrap: false
- syntax_highlighter: rouge
+markdown: redcarpet
+# markdown: kramdown
+# kramdown:
+#  input: GFM
+#  auto_ids: true
+#  hard_wrap: false
+#  syntax_highlighter: rouge
 theme: minima
 plugins:
   - jekyll-feed
