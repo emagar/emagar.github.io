@@ -26,6 +26,9 @@ github_username:  emagar
 
 # Build settings
 markdown: redcarpet
+ no_fenced_code_blocks: true
+ tables: true
+ autolink: true
 # markdown: kramdown
 # kramdown:
 #  input: GFM
