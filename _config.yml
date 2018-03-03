@@ -31,7 +31,8 @@ kramdown:
  auto_ids: true
  hard_wrap: false
  syntax_highlighter: rouge
-theme: minima
+#theme: minima
+theme: minimal-mistakes-jekyll
 plugins:
   - jekyll-feed
 
