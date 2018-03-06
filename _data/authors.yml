@@ -1,0 +1,20 @@
+# /_data/authors.yml
+
+eric.magar:
+  name: "Eric Magar"
+  uri: "http://ericmagar.com"
+  email: "emagar@itam.mx"
+  bio: "Political scientist, full-time professor at ITAM in Mexico City"
+  avatar: "/assets/img/eric.magar2.png"
+  twitter: "emagar"
+
+claudia.cervantes:
+  name: "Claudia Cervantes Pérez"
+  email: "ccalucp95@gmail.com"
+  bio: "Estudiante de ciencia política en el ITAM interesada en el análisis electoral"
+
+samuel.glez:
+  name: "Samuel González Cataño"
+  email: 
+  bio: "Estudiante de derecho y ciencia política en el ITAM"
+  
