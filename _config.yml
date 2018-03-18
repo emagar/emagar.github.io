@@ -5,23 +5,25 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+github: [metadata] # bug fix from @asnowfix in https://github.com/github/pages-gem/issues/399
+
+minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "default", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : El blog de CiPol
+title                    : "El blog de CiPol"
 title_separator          : "-"
 
 name                     : "Eric Magar"
 description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://emagar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
+  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
     shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -92,9 +94,9 @@ analytics:
 # Site Author
 author:
   name             : "Eric Magar"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "CdMx -- Mexico City"
+  avatar           : "/assets/img/aye.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "Politólogo, enseño e investigo en el ITAM" # "Political scientist, full-time professor at ITAM in Mexico City"
+  location         : "Ciudad de México"
   email            : "emagar@itam.mx"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
@@ -113,10 +115,10 @@ author:
   linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
-  stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  stackoverflow    : "1269115/emagar" # "123456/username" if your profile url is https://stackoverflow.com/users/123456/username
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : "emagar"
   vine             :
   weibo            :
   xing             :

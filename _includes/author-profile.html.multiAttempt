@@ -1,0 +1,60 @@
+<p>
+{% assign authorCount = page.authors | size %}
+{% if authorCount == 0 %}
+    No author
+{% elsif authorCount == 1 %}
+    {{ page.authors | first }}
+{% else %}
+    {% for author in page.authors %}
+        {% if forloop.first %}
+            {{ author }}
+        {% elsif forloop.last %}
+            and {{ author }}
+        {% else %}
+            , {{ author }}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</p>
+
+MI VERSION
+{% assign authorCount = page.authors | size %}
+{% if authorCount == 0 %}
+  {% if page.author and site.data.authors[page.author] %}
+    {% assign author = site.data.authors[page.author] %}
+  {% else %}
+    {% assign author = site.author %}
+  {% endif %}
+  {% assign authors = {{author.authorid | split: "," }} %}
+{% else %}
+  {% assign authors = page.authors %}
+{% endif %}
+
+<p>
+<!-- {% assign noAuthor = page.noAuthor %} -->
+<!-- {% if noAuthor == true %} -->
+<!--     No author -->
+<!-- {% endif %} -->
+{% if authorCount == 0 or authorCount == 1 %}
+    {{ authors[authorid].name }}
+{% elsif authorCount == 2 %}
+    {% for authorid in authors %}
+        {% if forloop.first %}
+            {{ authors[authorid].name }}
+        {% else forloop.last %}
+            and {{ authors[authorid].name }}
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {% for authorid in authors %}
+        {% if forloop.first %}
+            {{ authors[authorid].name }}
+        {% elsif forloop.last %}
+            , and {{ authors[authorid].name }}
+        {% else %}
+            , {{ authors[authorid].name }}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+</p>
+
