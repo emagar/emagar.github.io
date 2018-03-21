@@ -284,11 +284,11 @@
 
     <div class="author__content">
       <h3 class="author__name" itemprop="name">{{ site.data.authors[authorid].name }}</h3>
-      <!-- {% if site.data.authors[authorid].bio %} -->
-      <!--   <p class="author__bio" itemprop="description"> -->
-      <!--     {{ site.data.authors[authorid].bio }} -->
-      <!--   </p> -->
-      <!-- {% endif %} -->
+      {% if site.data.authors[authorid].bio %}
+        <p class="author__bio" itemprop="description">
+          {{ site.data.authors[authorid].bio }}
+        </p>
+      {% endif %}
     </div>
 
     <div class="author__urls-wrapper">
