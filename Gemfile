@@ -8,15 +8,16 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 3.7.3"
+#gem "jekyll", "~> 3.7.2"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 #gem "minima", "~> 2.0"
-gem "minimal-mistakes-jekyll"
+#gem "minimal-mistakes-jekyll"
+gem "jekyll-remote-theme"
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
+gem "github-pages", group: :jekyll_plugins
 
 # # If you have any plugins, put them here!
 # group :jekyll_plugins do
@@ -29,3 +30,8 @@ gem "minimal-mistakes-jekyll"
 # # Performance-booster for watching directories on Windows
 # gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
+# Filter dependencies (https://github.com/jch/html-pipeline#dependencies)
+gem 'github-linguist' # syntax hilight filter
+gem 'commonmarker' # markdownfilter
+
+gem 'jekyll-feed'
