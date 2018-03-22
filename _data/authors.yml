@@ -3,7 +3,7 @@
 eric.magar:
   name: "Eric Magar"
   uri: "http://ericmagar.com"
-  location: "Ciudad de México"
+  location: "Cd de México"
   email: "emagar@itam.mx"
   bio: "Politólogo, enseño e investigo en el ITAM" # Political scientist, full-time professor at ITAM in Mexico City"
   avatar: "/assets/img/aye.jpg"
@@ -11,12 +11,10 @@ eric.magar:
 
 adolfo.ramirez:
   name: "Adolfo Ramírez"
-  email:
   bio: "Estudia ciencia política en el ITAM"
 
 jr.moreno:
   name: "Juan Ramón Moreno"
-  email:
   bio: "Estudia ciencia política en el ITAM"
   
 claudia.cervantes:
@@ -26,17 +24,14 @@ claudia.cervantes:
 
 samuel.glez:
   name: "Samuel González Cataño"
-  email: 
   bio: "Estudia derecho y ciencia política en el ITAM"
   
 daniel.saavedra:
   name: "Daniel Saavedra Lladó"
-  email:
   bio: "Estudia ciencia política en el ITAM"
 
 humberto.trejo:
   name: "Humberto Trejo"
-  email:
   bio: "Estudia ciencia política en el ITAM"
 
 ceci.cabello:
@@ -48,3 +43,23 @@ dalia.rincon:
   name: "Dalia Rincón Altamirano"
   email: "dalia94@gmail.com"
   bio: "Estudia ciencia política en el ITAM"
+
+valentina.fix:
+  name: "Valentina Fix Martínez"
+  bio: "Estudia ciencia política y derecho en el ITAM"
+
+rodrigo.corona:
+  name: "Rodrigo Corona"
+  bio: "Estudia ciencia política en el ITAM"
+
+alejandro.palma:
+  name: "José Alejandro Palma"
+  bio: "Estudia ciencia política en el ITAM"
+
+gretel:
+  name: "Gretel Esmeralda Calleros Arellano"
+  bio: "Estudia ciencia política en el ITAM"
+
+patricia.cruz:
+  name: "Patricia Cruz Marín"
+  bio: "Estudia ciencia política en el ITAM y derecho en la UNAM"
