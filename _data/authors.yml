@@ -22,7 +22,7 @@ jr.moreno:
 claudia.cervantes:
   name: "Claudia Cervantes Pérez"
   email: "ccalucp95@gmail.com"
-  bio: "Estudiante de ciencia política en el ITAM interesada en Rawls y la justicia"
+  bio: "Estudia ciencia política en el ITAM interesada en Rawls y la justicia"
 
 samuel.glez:
   name: "Samuel González Cataño"
@@ -39,3 +39,12 @@ humberto.trejo:
   email:
   bio: "Estudia ciencia política en el ITAM"
 
+ceci.cabello:
+  name: "Cecilia Cabello Esquer"
+  email: "cecicabes@gmail.com"
+  bio: "Estudia ciencia política en el ITAM"
+
+dalia.rincon:
+  name: "Dalia Rincón Altamirano"
+  email: "dalia94@gmail.com"
+  bio: "Estudia ciencia política en el ITAM"
