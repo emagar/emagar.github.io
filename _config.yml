@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "Eric Magar"
   avatar           : "/assets/img/aye.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Politólogo, enseño e investigo en el ITAM" # "Political scientist, full-time professor at ITAM in Mexico City"
+  bio              : "Politólogo. Enseño e investigo en el ITAM" # "Political scientist, full-time professor at ITAM in Mexico City"
   location         : "Ciudad de México"
   email            : "emagar@itam.mx"
   uri              :
