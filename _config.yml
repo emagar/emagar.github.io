@@ -10,12 +10,12 @@ github: [metadata] # bug fix from @asnowfix in https://github.com/github/pages-g
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "default", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "es" # "en-US"
+locale                   : "es-MX" # "en-US"
 title                    : "El blog de CiPol"
-title_separator          : "-"
+title_separator          : "|"
 
 name                     : "Eric Magar"
-description              : "An amazing website."
+description              : "Investigamos lo bueno, lo malo y lo feo de la democracia mexicana"
 url                      : "https://emagar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "emagar/emagar.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -25,7 +25,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "blogdecipol" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -54,7 +54,7 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia
 algolia:
@@ -98,7 +98,7 @@ author:
   bio              : "Politólogo. Enseño e investigo en el ITAM" # "Political scientist, full-time professor at ITAM in Mexico City"
   location         : "Ciudad de México"
   email            : "emagar@itam.mx"
-  uri              :
+  uri              : # "http://ericmagar.com"
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
   codepen          :
@@ -259,9 +259,15 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
 
 # Welcome to Jekyll!
 #
