@@ -8,11 +8,11 @@ main:
     url: /tags/
   - title: "Eric Magar"
     url: /about/ 
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  # - title: "Quién somos"
+  #   url: /algo-nuevo/
   # - title: "Sample Collections"
   #   url: /collection-archive/
-  # - title: "Sitemap"
+  # - title: "Mapa de sitio"
   #   url: /sitemap/
 
 prof:
