@@ -2,11 +2,28 @@
 main:
   - title: "Quick-Start Guide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  - title: "Archivo:crono"
+    url: /year-archive/
+  - title: "Archivo:etiquetas"
+    url: /tags/
+  - title: "Eric Magar"
+    url: /about/ 
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+prof:
+  - title: "CV"
+    children:
+      - title: "español"
+        url: /pdfs/cvEspanol.pdf
+      - title: "English"
+        url: /pdfs/cvEnglish.pdf
+
+
+
+
+        
