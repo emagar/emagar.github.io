@@ -1,13 +1,13 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Eric Magar"
+    url: /about/ 
   - title: "Archivo:crono"
     url: /year-archive/
   - title: "Archivo:etiquetas"
     url: /tags/
-  - title: "Eric Magar"
-    url: /about/ 
+  - title: "Quick-Start Guide"
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "Quién somos"
   #   url: /algo-nuevo/
   # - title: "Sample Collections"
