@@ -10,9 +10,11 @@
 -->
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
   <head>
-    <meta name="google-site-verification" content="Rs5cuJ9TIHRtrYwHBJbnGA2cfuojOKWTDs-5RULqDhY" />
     {% include head.html %}
     {% include head/custom.html %}
+    {% if site.google_verify %}
+      <meta name="google-site-verification" content="{{ site.google_site_verification }}">
+    {% endif %}
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
