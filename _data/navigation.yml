@@ -3,9 +3,9 @@ main:
   - title: "Eric Magar"
     # url: /about/ 
     url: http:/ericmagar.com 
-  - title: "Archivo:crono"
+  - title: "Archivo"
     url: /year-archive/
-  - title: "Archivo:etiquetas"
+  - title: "Etiquetas"
     url: /tags/
   - title: "MMguide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
