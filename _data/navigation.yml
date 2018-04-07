@@ -7,7 +7,7 @@ main:
     url: /year-archive/
   - title: "Etiquetas"
     url: /tags/
-  - title: "MMguide"
+  - title: "?"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "Quién somos"
   #   url: /algo-nuevo/
