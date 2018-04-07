@@ -65,7 +65,7 @@ algolia:
   # genera índice con > ALGOLIA_API_KEY=bc1a03e0805374a64b0a9b6684b308d1 bundle exec jekyll algolia
 
 # SEO Related
-google_site_verification :
+google_site_verification : "Rs5cuJ9TIHRtrYwHBJbnGA2cfuojOKWTDs-5RULqDhY"
 bing_site_verification   :
 yandex_site_verification :
 naver_site_verification  :

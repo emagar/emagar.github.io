@@ -29,6 +29,10 @@
       </div>
     {% endif %}
 
+    {% if site.google_verify %}
+      <meta name="google-site-verification" content="{{ site.google_verify }}">
+    {% endif %}
+
     <div class="page__footer">
       <footer>
         {% include footer/custom.html %}
