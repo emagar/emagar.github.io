@@ -41,8 +41,11 @@ jr.moreno:
   
 claudia.cervantes:
   name: "Claudia Cervantes Pérez"
+  location: "Cd de México"
   email: "ccalucp95@gmail.com"
-  bio: "Estudia ciencia política en el ITAM interesada en Rawls y la justicia"
+  twitter: "Calu_cp95"
+  avatar: "/assets/img/claudia.cervantes.jpeg"
+  bio: "Politóloga (en proceso). ITAM"
 
 sofia.delamora:
   name: "Sofía de la Mora Tostado"
