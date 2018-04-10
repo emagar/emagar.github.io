@@ -15,6 +15,18 @@ alonso.lujambio:
   bio: "Uno de los más destacados precursores del estudio institucional en México"
   avatar: "/assets/img/ali-sq.jpg"
 
+zabel:
+  name: "Zabel Revuelta Pineda"
+  location: "CDMX"
+  email: "zabel.rp@gmail.com"
+  twitter: "zabelconz"
+  bio: "Politóloga de alma libre"
+  avatar: "/assets/img/zabel.jpg"
+
+vero.navarrete:
+  name: "Verónica Navarrete Morales"
+  bio: "Estudia ciencia política en el ITAM"
+
 iliana.rendon:
   name: "Iliana Rendón Arias"
   bio: "Doctora en Ciencias Sociales con mención en Ciencia Política por FLACSO México"
@@ -77,12 +89,4 @@ gretel:
 patricia.cruz:
   name: "Patricia Cruz Marín"
   bio: "Estudia ciencia política en el ITAM y derecho en la UNAM"
-
-zabel:
-  name: "Zabel Revuelta Pineda"
-  bio: "Estudia ciencia política en el ITAM"
-
-vero.navarrete:
-  name: "Verónica Navarrete Morales"
-  bio: "Estudia ciencia política en el ITAM"
 
