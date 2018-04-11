@@ -12,7 +12,7 @@ eric.magar:
 
 alonso.lujambio:
   name: "Alonso Lujambio"
-  bio: "Uno de los más destacados precursores del estudio institucional en México"
+  bio: "De los más destacados precursores del estudio institucional en México"
   avatar: "/assets/img/ali-sq.jpg"
 
 zabel:
@@ -27,6 +27,14 @@ vero.navarrete:
   name: "Verónica Navarrete Morales"
   bio: "Estudia ciencia política en el ITAM"
 
+claudia.cervantes:
+  name: "Claudia Cervantes Pérez"
+  location: "Cd de México"
+  email: "ccalucp95@gmail.com"
+  twitter: "Calu_cp95"
+  avatar: "/assets/img/claudia.cervantes2.jpeg"
+  bio: "Politóloga (en proceso). ITAM"
+
 iliana.rendon:
   name: "Iliana Rendón Arias"
   bio: "Doctora en Ciencias Sociales con mención en Ciencia Política por FLACSO México"
@@ -39,14 +47,6 @@ jr.moreno:
   name: "Juan Ramón Moreno"
   bio: "Estudia ciencia política en el ITAM"
   
-claudia.cervantes:
-  name: "Claudia Cervantes Pérez"
-  location: "Cd de México"
-  email: "ccalucp95@gmail.com"
-  twitter: "Calu_cp95"
-  avatar: "/assets/img/claudia.cervantes.jpeg"
-  bio: "Politóloga (en proceso). ITAM"
-
 sofia.delamora:
   name: "Sofía de la Mora Tostado"
   bio: "Estudia ciencia política en el ITAM"
