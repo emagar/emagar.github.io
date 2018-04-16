@@ -43,6 +43,13 @@ jr.moreno:
   avatar: "/assets/img/jr2.JPG"
   bio: "Politólogo y economista, ITAM"
   
+patricia.cruz:
+  name: "Patricia Cruz Marín"
+  location: "CdMx"
+  email: "pacruma@gmail.com"
+  avatar: "/assets/img/patricia-cruz.jpg"
+  bio: "Abogada/Politóloga/DH"
+
 iliana.rendon:
   name: "Iliana Rendón Arias"
   bio: "Doctora en Ciencias Sociales con mención en Ciencia Política por FLACSO México"
@@ -92,8 +99,4 @@ alejandro.palma:
 gretel:
   name: "Gretel Esmeralda Calleros Arellano"
   bio: "Estudia ciencia política en el ITAM"
-
-patricia.cruz:
-  name: "Patricia Cruz Marín"
-  bio: "Estudia ciencia política en el ITAM y derecho en la UNAM"
 
