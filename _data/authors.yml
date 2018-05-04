@@ -50,6 +50,18 @@ patricia.cruz:
   avatar: "/assets/img/patricia-cruz.jpg"
   bio: "Abogada/Politóloga/DH"
 
+ruben.figueroa:
+  name: "Rubén Figureoa Velasco"
+  bio: "Estudia ciencia política en el ITAM"
+
+lupe.cervantes:
+  name: "Guadalupe Cervantes Terán"
+  bio: "Estudia ciencia política en el ITAM"
+
+fermin.acosta:
+  name: "Fermín Acosta Ruiz"
+  bio: "Estudia ciencia política en el ITAM"
+  
 iliana.rendon:
   name: "Iliana Rendón Arias"
   bio: "Doctora en Ciencias Sociales con mención en Ciencia Política por FLACSO México"
