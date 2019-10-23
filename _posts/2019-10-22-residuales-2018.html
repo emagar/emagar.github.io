@@ -1,0 +1,257 @@
+---
+layout: single
+# layout: splash
+classes: wide
+title: La medición de la historia electoral 1994--2018
+# subtitle: 
+author: eric.magar
+date:   2019-10-22
+last_modified_at: 2019-10-22
+toc: false
+# teaser: /assets/img/pirinola.jpg
+tags: 
+  - elecciones federales
+  - patrón histórico
+  - bases de apoyo
+  - municipios
+  - secciones electorales
+---
+
+<p>
+El propósito de esta nota es presentar, discutir y distribuir estadísticas (disponibles <a href="https://github.com/emagar/mxDistritos">aquí</a>) del desempeño electoral de los partidos en la época competitiva. Elaboro dos cantidades de interés: el <i>pronóstico de voto</i> con base en la historia electoral y el <i>núcleo de apoyo</i> de los partido. El procedimiento permite obtener medidas resumen del pasado reciente en unidades territoriales relativamente pequeñas, los municipios (\(N \approx 2500\)) y las secciones electorales (\(N \approx 66000\)) del país. Aplico la metodología a cuatro elecciones de diputados federales entre 2009 y 2018 (próximamente lo haré con resultados de elecciones de ayutamientos), echando mano de resultados desde 1994 como insumo histórico.
+</p>
+
+<p>
+La nota empieza mostrando los estadísticos en acción. Esto permite ver su enorme potencial descriptivo y analítico. Al resumir la historia electoral reciente y su geografía, los estadísticos ofrecen una mirada panorámica a un aspecto fundamental de la política mexicana contemporánea. 
+</p>
+
+<p>
+Los apartados siguientes ofrecen los pormenores de la estimación de las cantidades de interés y son crecientemente técnicos. 
+</p>
+
+<div id="outline-container-org9a6bb45" class="outline-2">
+<h2 id="org9a6bb45"><span class="section-number-2">1</span> Los estadísticos en acción<a id="org82cb28d"></a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+La tabla <a href="#org496e4ef">1</a> presenta dos pares de diagramas de las elecciones de diputados federales de 2015 (abajo) y 2018 (arriba). Cada punto representa un municipio, coloreado según el partido que ganó la elección, y cuyas coordenas en el diagrama ternario indican el voto relativo del PAN, PRI y de la izquierda en la elección de diputados federales (no considera los votos de otros partidos).<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
+</p>
+
+<table id="org496e4ef" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Tabla 1</span> Expectativa histórica y voto municipal en dos elecciones federales</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/triplot2018-vhat-mu.png" alt="triplot2018-vhat-mu.png" /></td>
+<td class="org-left"><img src="../assets/img/triplot2018-v-mu.png" alt="triplot2018-v-mu.png" /></td>
+</tr>
+
+<tr>
+<td class="org-left"><img src="../assets/img/triplot2015-vhat-mu.png" alt="triplot2015-vhat-mu.png" /></td>
+<td class="org-left"><img src="../assets/img/triplot2015-v-mu.png" alt="triplot2015-v-mu.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Del lado izquierdo aparecen los <i>pronósticos de voto</i> para los municipios. La idea detrás del estadístico es resumir la evolución del voto en el municipio en cinco elecciones previas (2003-2015 en el caso de 2018) y usar la tendencia para proyectar un pronóstico de voto para 2018. Los diagramas del lado derecho, en cambio, muestran los resultados observados en ambas elecciones.
+</p>
+
+<p>
+Destaco tres rasgos notables en 2018. El primero es la discrepancia entre los diagramas ternarios izquierdo y derecho. O el modelo no acierta en sus pronósticos, o la de 2018 fue una elección extraordinaria. La historia daba licencia para pronosticar un triunfo holgado del PRI, tanto en número de municipios ganados como en los márgenes de victoria. Los municipios fuera de las bandas punteadas los gana un partido con un margen de 15 puntos o más, y el grueso de los municipios seguros son rojos en el pronóstico, con Morena en un distante segundo lugar. En los hechos, si bien un número no insignificante de municipios migraron hacia el PAN, la clara ventaja la demostró Morena. El <i>underachiever</i> fue el PRI. En contraste, los diagramas inferiores izquierdo y derecho presentan diferecias menores&#x2014;2015 fue una elección normal, el pasado permitió pronosticar mejor. 
+</p>
+
+<p>
+Segundo, las aristas y los vértices del triángulo 2018 se despoblaron en los hechos. En los vértices se ubican municipios "zapato", sin competencia. Las aristas, en cambio, capturan bipartidismo más (dentro de las bandas punteadas) o menos (fuera) simétrico. Destaca en los pronósticos que sólo la arista PAN&#x2013;Morena se esperaba desierta. En la práctica, el voto del tercer partido nunca se anuló, hubo más descoordinación que en el pasado. De hecho la intersección de las bandas punteadas aparece más densa y homogénea en el diagrama derecho que en el izquierdo. 
+</p>
+
+<p>
+Tercero, la competencia PAN <i>vs</i> izquierda fue moneda corriente en 2018. El patrón de los municipios competidos de las últimas dos décadas, visible en los diagramas de 2015, involucraba rivalidades PRI&#x2013;PAN o PRI&#x2013;izquierda, y rara vez PAN&#x2013;izquierda. Fue esto lo que posibilitó las alianzas que formaron PAN y PRD en elecciones subnacionales desde 2010 y que culminaron en el Frente de 2018. 
+</p>
+
+
+<p>
+Los diagramas de la Tabla <a href="#org1a3d12a">2</a> reportan secciones electorales y por ello ofrecen retratos de grano mucho más fino que los anteriores. Permiten introducir la otra cantidad de interés para esta nota: el <i>núcleo de apoyo</i> de los partidos. La idea del estadístico es medir el tamaño del grupo que históricamente ha apoyado al partido consistentemente, en las buenas y en las malas. 
+</p>
+
+<table id="org1a3d12a" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Tabla 2</span> Núcleo de apoyo y desempeño de los partidos en 2018</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/resid-pan-2018-vs-pan-core-se.png" alt="resid-pan-2018-vs-pan-core-se.png" /></td>
+<td class="org-left"><img src="../assets/img/resid-morena-2018-vs-morena-core-se.png" alt="resid-morena-2018-vs-morena-core-se.png" /></td>
+<td class="org-left"><img src="../assets/img/resid-pri-2018-vs-pri-core-se.png" alt="resid-pri-2018-vs-pri-core-se.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+El eje horizontal de cada diagrama mide el tamaño estimado del núcleo de apoyo de cada partido como proporción del electorado de la sección. El PRI aventajó a los demás en el periodo, gozó de núcleos en <i>todas</i> las secciones del país. Las distribuciones del PAN y de la izquierda, en cambio, aparecen desplazadas hacia el cero del eje&#x2014;son replativamente pocas las secciones donde contaron con apoyo incondicional. 
+</p>
+
+<p>
+El eje vertical reporta el desempeño de los tres partidos en 2018 (la diferencia entre el voto observado y el pronóstico). Valores positivos indican que el partido superó las expectativas en la sección, negativos que quedó a deber. El desastre electoral del PRI se aprecia claro en el diagrama rojo. Aunque hubo secciones con desempeño positivo, la densidad se concentra masivamente debajo de la línea horizontal del cero, algo que la Tabla <a href="#org496e4ef">1</a> ya dejaba entrever. Lo verdaderamente sorprendente es que el pésimo desempeño es directamente proporcional al tamaño del núcleo priista. Peña y Meade consiguieron lo que parecía, si no imposible, sí extremadamente improbable: enajenar a los votantes incondicionales del PRI en 2018. El PAN y la izquierda, en cambio, cumplieron con el pronóstico en secciones donde han contado con algunos grupos de apoyo. Ambos (sobretodo Morena) excedieron pronósticos donde carecen de núcleos importantes, arrabatándole al PRI sus votantes. 
+</p>
+
+<p>
+La nota elabora ahora sobre la receta con que cociné los estadísticos (el código para replicarlos se encuentra <a href="https://github.com/emagar/mxDistritos/code/elec-data-for-maps.r">aquí</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7c8b978" class="outline-2">
+<h2 id="org7c8b978"><span class="section-number-2">2</span> Primeras diferencias</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+La aproximación más común para estudiar el movimiento electoral son las primeras diferencias. Si se denota \(v_t\) a la proporción del voto de un partido en el municipio, sección u otra unidad de agregación en el periodo \(t\), la primera diferencia se define como \(d_t = v_t - v_{t-1}\). 
+</p>
+
+<p>
+La cantidad \(d_t\) es intuitiva, muestra el signo y la magnitud del cambio de una elección a la siguiente. Pero, porque contempla sólo pares de elecciones consecutivas, se le escapan procesos más dinámicos en las unidades. Un ejemplo, bien documentado por la sociología del voto, es la regresión a la media (Campbell 1991, Segovia 1979). Detectarlo requiere observar por lo menos tres periodos consecutivos para constatar signos contrarios en \(d_{t+1}\) y \(d_t\). Los procesos de cambio seculares de nuestro sistema de partidos en el último cuarto de siglo exigen más perspectiva histórica. 
+</p>
+
+<p>
+(Las primeras diferencias aparecen en los campos <code>d.pan</code>, <code>d.pri</code> y <code>d.morena</code> de los datos distribuidos.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgecc84cd" class="outline-2">
+<h2 id="orgecc84cd"><span class="section-number-2">3</span> La tendencia lineal reciente</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Un modo de adoptarla es con el <i>pronóstico de voto</i> a partir de la tendencia discernible en las cinco elecciones federales previas (Magar 2012). Resumo la tendencia central del voto histórico reciente mediante una estimación lineal en el tiempo, ajustando una recta por año analizado para cada partido en cada municipio o sección electoral. 
+</p>
+
+<p>
+La pendiente de la recta ajustada (la tendencia) permite extrapolar el apoyo electoral del partido hacia el futuro. Por ejemplo, para obtener el voto que el pasado reciente de un partido permite esperar para la unidad \(u\) en 2018, estimo la <b>ecuación 1</b>
+</p>
+
+<p>
+\[v_{ut} = a + b \times t + \text{error}, \; t = 2003, \ldots, 2015\] 
+</p>
+
+<p>
+que posteriormente uso para pronosticar \(\hat{v}_{u2018} = \hat{a} + \hat{b} \times 2018\). Esta es una predicción allende la muestra (<i>out of sample prediction</i>) del voto esperado que puede constrastarse con el voto observado para evaluar si éste parece o no ajustarse al patrón histórico. Para el pronóstico de 2015 la muestra se desplaza un periodo y sería \(t = 2000, \ldots, 2012\), y así sucesivamente para años anteriores. Distribuyo pronósticos de voto para 2009, 2012, 2015 y 2018, producirlos conllevó estimar alrededor de diez mil regresiones municipales y más de 250 mil seccionales.
+</p>
+
+<p>
+(El pronóstico de voto aparece en los campos <code>vhat.pan</code>, <code>vhat.pri</code> y <code>vhat.morena</code> de los datos distribuidos.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org186fe33" class="outline-2">
+<h2 id="org186fe33"><span class="section-number-2">4</span> El núcleo de apoyo del partido</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+El otro estadístico histórico es el apoyo nuclear del partido en la unidad. Su definición se desprende de clasificar el electorado en tres categorías: (1) los grupos de apoyo, que en el pasado han apoyado al partido consistentemente; (2) los grupos opositores, que han apoyado consistentemente a otro partido; y (3) los grupos <i>swing</i>, que no han sido consistentemente apoyo ni consistentemente opositores (Cox y McCubbins 1986). El núcleo partidista lo conforman los grupos de apoyo. 
+</p>
+
+<p>
+Para estimar este núcleo sigo el procedimiento de Díaz Cayeros <i>et al</i>. (2016). Si \(\bar{v}_t\) denota el apoyo promedio de un partido en todas las unidades en el periodo \(t\),<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> para cada partido en cada unidad ajusto la <b>ecuación 2</b>
+\[\begin{equation}
+v_{ut} = \alpha + \beta \times \bar{v}_t + \text{error}, \; t = 1994, \ldots, 2018.
+\end{equation}\]
+\(\beta\) mide el efecto de las mareas nacionales de apoyo en el voto del partido en la unidad \(u\). Por ejemplo, \(\hat{\beta}=1\) estimaría que por cada punto porcentual que el partido ganó o perdió a nivel nacional en el periodo, ganó o perdió un punto porcentual en la unidad; \(\hat{\beta}=0\), en cambio, indicaría un aislamiento cabal de la unidad de los cambios nacionales. Es una medida de volatilidad del voto en el municipio o sección. 
+</p>
+
+<p>
+El coeficiente \(\alpha\) estima el núcleo: el apoyo esperado en \(u\) en el hipotético caso de que el partido no recibiera ningún voto a nivel nacional. Por ejemplo, \(\hat{\alpha}=.4\) indicaría que, llueve, truene o relampaguee, 40% del electorado del municipio es incondicional al partido&#x2014;lo cual indicaría un núcleo de tamaño considerable.
+</p>
+
+<p>
+Una crítica anticipable a esta medición del núcleo es su carácter contrafactual extremo (King y Zeng 2006). Amerita un escrutinio riguroso, que planeo llevar a cabo en el futuro. 
+</p>
+
+<p>
+(El núcleo de los partidos aparece en los campos <code>alphahat.pan</code>, <code>alphahat.pri</code> y <code>alphahat.morena</code> de los datos distribuidos.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org34620b4" class="outline-2">
+<h2 id="org34620b4"><span class="section-number-2">5</span> Variables composicionales</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Cierro con un rasgo importante de la especificación de los modelos, asociado con la naturaleza del voto como <i>variable composicional</i>. Las variables composicionales son descripciones cuantitativas de las partes de un todo y, por ende, tienen dos características: son proporciones que suman la unidad.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
+</p>
+
+<p>
+Al estimar por separado a los partidos, el reto de las ecuaciones 1 y 2 es no pronosticar proporciones de voto menores a cero ni mayores a uno; y que la suma de pronósticos partidistas sume la unidad. Para conseguirlo, Aitchison (1986) propone sustituir las proporciones por log-relaciones (<i>log-ratios</i>) en el análisis. Tomando arbitrariamente al PRI como partido de referencia, define el voto del partido \(p\) con relación al PRI como 
+\[r_p = \frac{v_p}{v_{\text{pri}}}.\] 
+Un valor \(r_p=1\) indicaría un empate entre el partido y el PRI, mientras \(r_p>1\) que superó al PRI en la proporción que indica el valor. 
+</p>
+
+<p>
+Así, la ecuación 1 se reespecifica como sigue
+\[\ln(r_{put}) = a + b \times t + \text{error}\]
+y la ecuación 2 como
+\[\ln(r_{put}) = \alpha + \beta \times \bar{r}_{pt} + \text{error}.\]
+</p>
+
+<p>
+Aplicar el logaritmo natural permite atenuar el efecto de valores extremos del regresor sobre la variable dependiente, similar como lo hace un logit. Los modelos se estimaron con mínimos cuadrados ordinarios.
+</p>
+
+<p>
+Los coeficientes estimados necesitan transformarse para recuperar las proporciones de voto de los partidos. Ilustrando con el caso tripartidista, es trivial mostrar que
+</p>
+
+\begin{equation}
+\hat{v}_p = \frac{\hat{r}_p}{1 + \hat{r}_{\text{pan}} + \hat{r}_{\text{morena}}} \; \text{y} \;
+\hat{v}_{\text{pri}} = \frac{1}{1 + \hat{r}_{\text{pan}} + \hat{r}_{\text{morena}}.}
+\end{equation}
+
+<p>
+Estas son las cantidades que reportan los datos distribuidos.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org42bbbc4" class="outline-2">
+<h2 id="org42bbbc4"><span class="section-number-2">6</span> Referencias</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Aitchison, John. 1986. <i>The Statistical Analysis of Compositional Data</i>. Nueva York: Chapman and Hall.</li>
+<li>Campbell, James E. 1991. The presidential surge and its midterm decline in congressional elections, 1868-1988. <i>The Journal of Politics</i> 53(2):477-87.</li>
+<li>Cox, Gary W. y Mathew D. McCubbins. 1986. Electoral Politics as a Redistributive Game.  <i>The Journal of Politics</i> 48(2):370-89.</li>
+<li>Díaz Cayeros, Alberto, Federico Estévez y Beatriz Magaloni. 2016. <i>The Political Logic of Poverty Relief: Electoral Strategies and Social Policy in Mexico</i>. Nueva York: Cambridge University Press.</li>
+<li>King, Gary y Langche Zeng. 2006. The Dangers of Extreme Counterfactual. <i>Political Analysis</i> 14(2):131-59.</li>
+<li>Magar, Eric. 2012. Gubernatorial Coattails in Mexican Congressional Elections. <i>The Journal of Politics</i> 74(2):383-99.</li>
+<li>Segovia, Rafael. 1979. Las elecciones federales de 1979. <i>Foro Internacional</i> 20(3):397-410.</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+Cabe aclarar que, para la historia electoral de la izquierda (que denomino "Morena" en los diagramas y los datos distribuidos), agregué sistemáticamente los votos del PRD, PT y MC hasta 2015. Ese año, a los tres les sumé los votos de Morena y del PES. En 2018 la izquierda la conformaron Morena, PT y PES.   
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+Habría que omitir la unidad \(u\) analizada del promedio del año \(t\) para no incluir la variable dependiente de ambos lados de la ecuación. No lo hago porque, dado el grande número de unidades muinicipales o seccionales, y tratándose de datos relativos de cada unidad, este refinamiento tendría un impacto ínfimo en el valor de cada promedio. 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+Formalmente, las composicionales son variables aleatorias sujetas a dos restricciones: 
+\[0 \leq v_p \leq 1 \; \forall \; p \in P \; \; y \; \; \sum_P v_p = 1.\] 
+</p></div></div>
+
+
+</div>
+</div>
