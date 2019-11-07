@@ -19,7 +19,7 @@ tags:
 ---
 
 <p>
-El propósito de esta nota es presentar, discutir y distribuir estadísticas (disponibles <a href="https://github.com/emagar/mxDistritos">aquí</a>) del desempeño electoral de los partidos en la época competitiva. Elaboro dos cantidades de interés: el <b>pronóstico de voto</b> con base en la historia electoral y el <b>núcleo de apoyo</b> de los partidos. El procedimiento que describo mas abajo permite obtener medidas resumen del pasado reciente en unidades territoriales relativamente pequeñas, los municipios (\(N \approx 2500\)) y las secciones electorales (\(N \approx 66000\)) del país. Aplico la metodología a cuatro elecciones de diputados federales entre 2009 y 2018 (próximamente lo haré con resultados de elecciones de ayutamientos), echando mano de resultados desde 1994 como insumo histórico.
+El propósito de esta nota es presentar, discutir y distribuir estadísticas (disponibles <a href="https://github.com/emagar/mxDistritos">aquí</a>) del desempeño electoral de los partidos en la época competitiva. Elaboro dos cantidades de interés: el <b>pronóstico de voto</b> con base en la historia electoral y el <b>núcleo de apoyo</b> de los partidos. El procedimiento que describo más abajo permite obtener medidas resumen del pasado reciente en unidades territoriales relativamente pequeñas, los municipios (\(N \approx 2500\)) y las secciones electorales (\(N \approx 66000\)) del país. Aplico la metodología a cuatro elecciones de diputados federales entre 2009 y 2018 (próximamente lo haré con resultados de elecciones de ayutamientos), echando mano de resultados desde 1994 como insumo histórico.
 </p>
 
 <p>
@@ -59,7 +59,7 @@ La tabla <a href="#org496e4ef">1</a> presenta dos pares de diagramas de las elec
 </table>
 
 <p>
-Del lado izquierdo aparecen los <i>pronósticos de voto</i> para los municipios. La idea detrás del estadístico es resumir la evolución del voto en el municipio en cinco elecciones previas (2003-2015 en el caso de 2018) y usar la tendencia para proyectar un pronóstico de voto para 2018. Los diagramas del lado derecho, en cambio, muestran los resultados observados en ambas elecciones.
+Del lado izquierdo aparecen los <i>pronósticos de voto</i> para los municipios. La idea detrás del estadístico es resumir la evolución del voto en el municipio en cinco elecciones previas (2003&#x2013;2015 en el caso de 2018) y usar la tendencia para proyectar un pronóstico de voto para 2018. Los diagramas del lado derecho, en cambio, muestran los resultados observados en ambas elecciones.
 </p>
 
 <p>
@@ -99,7 +99,7 @@ Los diagramas de la Tabla <a href="#org1a3d12a">2</a> reportan secciones elector
 </table>
 
 <p>
-El eje horizontal de cada diagrama mide el tamaño estimado del núcleo de apoyo de cada partido como proporción del electorado de la sección. El PRI aventajó a los demás en el periodo, gozó de núcleos en <i>todas</i> las secciones del país. Las distribuciones del PAN y de la izquierda, en cambio, aparecen desplazadas hacia el cero del eje&#x2014;son replativamente pocas las secciones donde contaron con apoyo incondicional. 
+El eje horizontal de cada diagrama mide el tamaño estimado del núcleo de apoyo de cada partido como proporción del electorado de la sección. El PRI aventajó a los demás en el periodo, gozó de núcleos en <i>todas</i> las secciones del país. Las distribuciones del PAN y de la izquierda, en cambio, aparecen desplazadas hacia el cero del eje&#x2014;son reativamente pocas las secciones donde contaron con apoyo incondicional. 
 </p>
 
 <p>
@@ -107,7 +107,7 @@ El eje vertical reporta el desempeño de los tres partidos en 2018 (la diferenci
 </p>
 
 <p>
-La nota elabora ahora sobre la receta con que cociné los estadísticos (el código para replicarlos se encuentra <a href="https://github.com/emagar/mxDistritos/code/elec-data-for-maps.r">aquí</a>).
+La nota elabora ahora sobre la cocina de los estadísticos (el código para replicarlos se encuentra <a href="https://github.com/emagar/mxDistritos/code/elec-data-for-maps.r">aquí</a>).
 </p>
 </div>
 </div>
@@ -166,7 +166,7 @@ Para estimar este núcleo sigo el procedimiento de Díaz Cayeros <i>et al</i>. (
 \[\begin{equation}
 v_{ut} = \alpha + \beta \times \bar{v}_t + \text{error}, \; t = 1994, \ldots, 2018.
 \end{equation}\]
-\(\beta\) mide el efecto de las mareas nacionales sobre el voto del partido en la unidad \(u\). Por ejemplo, \(\hat{\beta}=1\) estimaría que por cada punto porcentual que el partido ganó o perdió a nivel nacional en el periodo, ganó o perdió un punto porcentual en la unidad; \(\hat{\beta}=0\), en cambio, indicaría un aislamiento cabal de la unidad de los cambios nacionales. Es una medida de volatilidad del <del>voto</del> partido en el municipio o sección (análogo a la <a href="https://www.investopedia.com/terms/v/volatility.asp">&beta; volatilidad</a> de la literatura financiera) . 
+\(\beta\) mide el efecto de las mareas nacionales sobre el voto del partido en la unidad \(u\). Por ejemplo, \(\hat{\beta}=1\) estimaría que por cada punto porcentual que el partido ganó o perdió a nivel nacional en el periodo, ganó o perdió un punto porcentual en la unidad; \(\hat{\beta}=0\), en cambio, indicaría un aislamiento cabal de la unidad de los cambios nacionales. Es una medida de volatilidad del <del>voto</del> partido en el municipio o sección (análogo a la <a href="https://www.investopedia.com/terms/v/volatility.asp">"volatilidad beta"</a> de la literatura financiera). 
 </p>
 
 <p>
@@ -178,7 +178,7 @@ Una crítica anticipable a esta medición del núcleo es su carácter contrafact
 </p>
 
 <p>
-(El núcleo de los partidos aparece en los campos <code>alphahat.pan</code>, <code>alphahat.pri</code> y <code>alphahat.morena</code> de los datos distribuidos.)
+(El núcleo de los partidos aparece en los campos <code>alphahat.pan</code>, <code>alphahat.pri</code> y <code>alphahat.morena</code> de los datos distribuidos. La volatiiad partidista en <code>betahat.pan</code>, <code>betahat.pri</code> y <code>betahat.morena</code>.)
 </p>
 </div>
 </div>

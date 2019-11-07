@@ -1,0 +1,258 @@
+---
+layout: single
+# layout: splash
+classes: wide
+title: The measurement of electoral history 1994--2018
+# subtitle: 
+author: eric.magar
+date:   2019-11-06
+last_modified_at: 2019-11-06
+toc: false
+mathjax: true
+# teaser: /assets/img/pirinola.jpg
+tags: 
+  - elecciones federales
+  - patrón histórico
+  - bases de apoyo
+  - municipios
+  - secciones electorales
+---
+
+<p>
+This note presents, discusses, and distributes statistics (available <a href="https://github.com/emagar/mxDistritos">here</a>) of party performance in Mexico's competitive era. I elaborate two quantities of interest: <b>voting forecasts</b> based on recent electoral history and measures of parties' <b>core support</b>. The procedure produces summary measures of recent electoral history in relatively small geographic units, municipalities (\(N \approx 2500\)) and <i>secciones electorales</i> (\(N \approx 66000\)) throughout Mexico. I apply the methodology to four federal congressional elections between 2009 and 2018 (I will soon apply it to municipal races too), using results since 1994 as historical input.
+</p>
+
+<p>
+The note starts by showing the statistics in action to get a glimpse of their descriptie and analytic potential. By summarizing recent electoral history and its geography, the quantities offer a scenic view of a critical aspect of contemporary Mexican politics. 
+</p>
+
+<p>
+Later sections offer methodological detail on the estimation of these quantities of interest and are incresingly technical. 
+</p>
+
+<div id="outline-container-orgbc852ff" class="outline-2">
+<h2 id="orgbc852ff"><span class="section-number-2">1</span> Statistics in action<a id="org47cb583"></a></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Table <a href="#org44fbad9">1</a> presents two pairs of diagrams for the 2015 (below) and 2018 (above) congressional elections. Each dot represents one municipality, colored according to the winning party, with coordinats in the ternary plot according to the relative votes of the PAN, the PRI, and the left in the federal deputy race (other smaller parties are excluded).<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
+</p>
+
+<table id="org44fbad9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Historic expectations and municipal-level vote in two congressional elections</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/triplot2018-vhat-mu.png" alt="triplot2018-vhat-mu.png" /></td>
+<td class="org-left"><img src="../assets/img/triplot2018-v-mu.png" alt="triplot2018-v-mu.png" /></td>
+</tr>
+
+<tr>
+<td class="org-left"><img src="../assets/img/triplot2015-vhat-mu.png" alt="triplot2015-vhat-mu.png" /></td>
+<td class="org-left"><img src="../assets/img/triplot2015-v-mu.png" alt="triplot2015-v-mu.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The left side shows the <i>vote forecasts</i>. The idea behind this statistic is summarizing the evolution of relative votes in the municipality in five previous elections (2003&#x2013;2015 in the case of 2018) and using the tendency to project a vote forecast for the current year. Plots in the right side show the actual results observed in both elections.
+</p>
+
+<p>
+Three features are noteworthy in 2018. The first is the discrepancy between the left and right plots. Either the model does a poor job forecasting, or 2018 was an extraordinary election. History gave license to expect a comfortable PRI victory, both in the number of munipalities won and in margins of victory. Municipalities outside the dotted bands are won by margins of 15 points or more, and the bulk of secure municipalities are red in the forecast, with Morena in a distant second place. In fact, although a significant number of municipalities migrated towards the PAN, it was Morena who showed a clear advantage. PRI was the underachiever. In contrast, the lower left and right plots reveal fewer differences between them&#x2014;2015 was a more normal election, the past offering muche better grounds to forecast. 
+</p>
+
+<p>
+Second, observed municipalities fled the edges and triangle vertices in 2018. Observations in vertices show a party that has no significant challenger. While those on the edges were bipartisan, whether more (inside dotted bands) or less (outside the bands) symmetric. It is also plain in forecasts that only the PAN&#x2013;Morena edge was expected to be unpopulated. In practie, however, third party vote rarely collapsed to zero, there was mucho more discoordination than in the past. In fact, the intersection of dotted bands appeeared denser and more homogeneous in the right than the left diagram. 
+</p>
+
+<p>
+Third, the PAN <i>vs</i> left competition was legal tender in 2018. The pattern in competitive municipalities in the last two decades, still visible in the 2015 plots, involved either PRI&#x2013;PAN or PRI&#x2013;left rivalries, and rarely PAN&#x2013;izquierda. It was this pattern that eased electoral alliances between PAN and PRD in subnational races since 2010 that culminated in the Frente they formed in 2018 to nominate a joint presidental candidate. 
+</p>
+
+
+<p>
+Plots in Table <a href="#org91adefc">2</a> report <i>secciones electorales</i> and therefore offer much finer-grained than the previous portraits. They introduce the other quantity of interst in this note: parties' <i>core support</i>. The idea behind this statistic is mesuring the size of the group that has historically supported the party consistently, in good but also in bad years. 
+</p>
+
+<table id="org91adefc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Support core and party performance in 2018</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/resid-pan-2018-vs-pan-core-se.png" alt="resid-pan-2018-vs-pan-core-se.png" /></td>
+<td class="org-left"><img src="../assets/img/resid-morena-2018-vs-morena-core-se.png" alt="resid-morena-2018-vs-morena-core-se.png" /></td>
+<td class="org-left"><img src="../assets/img/resid-pri-2018-vs-pri-core-se.png" alt="resid-pri-2018-vs-pri-core-se.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The horizontal axis in each plot measures the size of party core support groups as a proportion of the <i>sección</i>'s electorate. The PRI enjoyed a clear edge over the rest of the parties in the period, with sizeable cores in <i>all</i> secciones nationwide. The distributions of the PAN and the left, in contrast, appear concentrated towards the zero&#x2014;they have relatively few secciones with some inconditional support. 
+</p>
+
+<p>
+The vertical axis reports the three parties' performance in 2018 (the difference between the observed vote and the forecast). Positive values indicate that the party excelled expectations in the <i>sección</i>, negative ones that it under-performed it expectation. The PRI's electoral disaster appears all too clearly in the red plot. There were a few secciones with positive performance, but the density concentrates massively below the horizontal zero line, something that Table <a href="#org44fbad9">1</a> had hinted. What is truly remarkable is that the dismal performance is directly proportional to the size of the PRI core. President Peña and candidate Meade achieved what seemed, if not impossible, extremely improbable: they alienated the PRI's unconditional voters in 2018. The PAN and the left met expectations in secciones where they have enjoyed with roups of support. Both (especially Morena) over-achieved where they lack important cores, taking away PRI voters. 
+</p>
+
+<p>
+The note elaborates how statistics were prepared (replication code can be found <a href="https://github.com/emagar/mxDistritos/code/elec-data-for-maps.r">here</a>).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org477a061" class="outline-2">
+<h2 id="org477a061"><span class="section-number-2">2</span> First differences</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+One common approach to study electoral change is through first differences. Denoting \(v_t\) the party's vote share in the municipality or the <i>sección</i>, in period \(t\), the firt difference is simply \(d_t = v_t - v_{t-1}\). 
+</p>
+
+<p>
+\(d_t\) is an intuitive quantity, showing the sign and magnitude of change from one election to the next. But, precisely because it compares pairs of consecutive elections only, it misses more dynamic processes in the units. One example, well documented by electoral sociology, is the regression to the mean (Campbell 1991, Segovia 1979). Its detection requieres observing the unit through at least three consecutive periods to verify contrary signs in \(d_{t+1}\) and \(d_t\). The study of secular change in the Mexican party system in the last quarter of century calls for deeper historical perspective. 
+</p>
+
+<p>
+(First differences appear in the fields <code>d.pan</code>, <code>d.pri</code>, and <code>d.morena</code> in the distributed data.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbd498ab" class="outline-2">
+<h2 id="orgbd498ab"><span class="section-number-2">3</span> The recent linear tendency</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+One way of adopting it is with <i>vote forecasting</i> from tendencies discernible in the previous five congressional races (Magar 2012). I summarize the central tendency of the recent historical vote by means of linear estimation in time, fitting a straight line for each year analyzed and each party in the municipality or <i>sección electoral</i>. 
+</p>
+
+<p>
+The slope of the fitted line (the tendency) serves to extrapolate the party's electoral support to the future. For instance, to get the vote share that the recent past predicts for a party in unit \(u\) for 2018, I estimate <b>equation 1</b>
+</p>
+
+<p>
+\[v_{ut} = a + b \times t + \text{error}, \; t = 2003, \ldots, 2015\] 
+</p>
+
+<p>
+that I then use to predict \(\hat{v}_{u2018} = \hat{a} + \hat{b} \times 2018\). This is an out-of-sample prediction of the party's vote share, it can be compared to the party's actual vote share in 2018 to gauge whether or not the unit approximates the historical record. For the 2015 forecast the sample shifts one period to become \(t = 2000, \ldots, 2012\), and so on an so forth for previous years. I distribute forecasts for 2009, 2012, 2015, and 2018, which involved fitting about 10 thousand municipal regressions and more than 250 thousand sección-level.
+</p>
+
+<p>
+(Vote forecasts appear in the fields <code>vhat.pan</code>, <code>vhat.pri</code>, and <code>vhat.morena</code> of the distributed data.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5897d05" class="outline-2">
+<h2 id="org5897d05"><span class="section-number-2">4</span> The party's support core</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+The other historical statistic is the parties' core support in the unit. Its definition stems from classifying voters in three categories: (1) support groups, that in the past have consistently supported the party; (2) opposition groups, that have consistently supported another party; and (3) swing groups, that have neither consistently supported nor consistently opposed the party (Cox and McCubbins 1986). The party core consists of the support groups. 
+</p>
+
+<p>
+I use the procedure by Díaz Cayeros <i>et al</i>. (2016) to estimate this core. If \(\bar{v}_t\) denotes the party's mean suport across all units in period \(t\),<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> para cada partido en cada unidad ajusto la <b>ecuación 2</b>
+\[\begin{equation}
+v_{ut} = \alpha + \beta \times \bar{v}_t + \text{error}, \; t = 1994, \ldots, 2018.
+\end{equation}\]
+\(\beta\) measures the effect that national party tides have on the party's vote in unit \(u\). For instance, \(\hat{\beta}=1\) estimates that for every percentage point that the party wins or loses nationally in year \(t\), it also wins or loses one percentage point in the unit; \(\hat{\beta}=0\), on the other hand, would indicate the unit's full isolation form national swings. It is therefore a measure of party volatility in the municipality or <i>sección</i> (analogous to <a href="https://www.investopedia.com/terms/v/volatility.asp">"beta volatility"</a> in the financial literature). 
+</p>
+
+<p>
+The \(\alpha\) coefficient estimates the core size: expected support in unit \(u\) in the hypothetical case that the party receives no vote at the national level. For instance, \(\hat{\alpha}=.4\) would indicate that, in the starkest of scenarios, 40% of the electorate in the municipality is unconditional to the party&#x2014;which would indeed be a core of substantial size.
+</p>
+
+<p>
+A critique that can be anticipated towards this measure of the party's support core is its extreme counterfactual nature (King and Zeng 2006). It deserves rigorous scrutiny, something I plan doing in the near future. 
+</p>
+
+<p>
+(The parties' core support appears in the fields <code>alphahat.pan</code>, <code>alphahat.pri</code>, and <code>alphahat.morena</code> of the distributed data. Party volatility in <code>betahat.pan</code>, <code>betahat.pri</code>, and <code>betahat.morena</code>.)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9b3b4f0" class="outline-2">
+<h2 id="org9b3b4f0"><span class="section-number-2">5</span> Compositional variables</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+I close with an important feature of the model speifications, associated with the <i>compositional</i> nature of electoral returns. Compositional variable are quantitative descriptions of the parts of a whole. They therefore have two charateristics: (1) they are proportions that (2) add up to unity.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
+</p>
+
+<p>
+When estimating parties separately, the challenge of equatios 1 and 2 is to avoid forecasting vote shares less than zero or greater than one; and that the sum of party forecasts equals 1. To achieve this, Aitchison (1986) proposes substituting vote shares by log-ratios in the analysis. Arbitrarily setting the PRI as the reference party, define party \(p\)'s vote relative to the PRI as 
+\[r_p = \frac{v_p}{v_{\text{pri}}}.\] 
+A value \(r_p=1\) would indicate a tie betwee the party and the PRI, while \(r_p>1\) that it finished ahead of the PRI in the proportion that the value reveals. 
+</p>
+
+<p>
+Thus, equation 1 is respecified as
+\[\ln r_{put} = a + b \times t + \text{error}\]
+y equation 2 as
+\[\ln r_{put} = \alpha + \beta \times \bar{r}_{pt} + \text{error}.\]
+</p>
+
+<p>
+Applying the natural logarythm attenuates the effect of extreme values of the regressor o nthe dependent variable, similar as a logit regression would. Models fitting was done with ordinary least squares. 
+</p>
+
+<p>
+Coefficient estimates requires transformation to collect party vote shares. Illustrating with a three-party caste, it is trivial that 
+</p>
+
+\begin{equation}
+\hat{v}_p = \frac{\hat{r}_p}{1 + \hat{r}_{\text{pan}} + \hat{r}_{\text{morena}}} \; \text{and} \;
+\hat{v}_{\text{pri}} = \frac{1}{1 + \hat{r}_{\text{pan}} + \hat{r}_{\text{morena}}.}
+\end{equation}
+
+<p>
+These are the quatities that the distributed data report. 
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e2f482" class="outline-2">
+<h2 id="org9e2f482"><span class="section-number-2">6</span> References</h2>
+<div class="outline-text-2" id="text-6">
+<ul class="org-ul">
+<li>Aitchison, John. 1986. <i>The Statistical Analysis of Compositional Data</i>. New York: Chapman and Hall.</li>
+<li>Campbell, James E. 1991. The presidential surge and its midterm decline in congressional elections, 1868-1988. <i>The Journal of Politics</i> 53(2):477-87.</li>
+<li>Cox, Gary W. and Mathew D. McCubbins. 1986. Electoral Politics as a Redistributive Game.  <i>The Journal of Politics</i> 48(2):370-89.</li>
+<li>Díaz Cayeros, Alberto, Federico Estévez and Beatriz Magaloni. 2016. <i>The Political Logic of Poverty Relief: Electoral Strategies and Social Policy in Mexico</i>. New York: Cambridge University Press.</li>
+<li>King, Gary and Langche Zeng. 2006. The Dangers of Extreme Counterfactual. <i>Political Analysis</i> 14(2):131-59.</li>
+<li>Magar, Eric. 2012. Gubernatorial Coattails in Mexican Congressional Elections. <i>The Journal of Politics</i> 74(2):383-99.</li>
+<li>Segovia, Rafael. 1979. Las elecciones federales de 1979. <i>Foro Internacional</i> 20(3):397-410.</li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+I must note that, for the left's electoral history (which I arbitrarily call "Morena" in the plots and distributed data), I systematically added up the votes of the PRD, PT, and MC up to 2015. I also added Morena's and PES's votes that year. In 2018 the left consistes of Morena, PT, and PES jointly.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+The analyzed unit \(u\) should be dropped from period \(t\)'s mean in order to not include the dependent variable in the right side of the equation. I do not drop it due to the large number of municipal or seccional units (each contributing a fraction to the mean) and the use of vote shares (so large units are watered down): this refinement's impact should be negligible in each mean value. 
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+Formally, the compositional are random variables subject to two constraints: 
+\[0 \leq v_p \leq 1 \; \forall \; p \in P \; \; and \; \; \sum_P v_p = 1.\] 
+</p></div></div>
+
+
+</div>
+</div>
