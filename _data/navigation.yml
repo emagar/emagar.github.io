@@ -1,8 +1,8 @@
 # main links
 main:
   - title: "Eric Magar"
-    # url: /about/ 
-    url: http:/ericmagar.com 
+    url: /about/ 
+    # url: http:/ericmagar.com 
   - title: "Archivo"
     url: /year-archive/
   - title: "Etiquetas"
@@ -17,14 +17,30 @@ main:
   #   url: /sitemap/
 
 prof:
+  - title: "About"
+    url: /about/
+  - title: "Contact"
+    url: /contact/
   - title: "CV"
     children:
       - title: "español"
-        url: /pdfs/cvEspanol.pdf
+        url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
       - title: "English"
-        url: /pdfs/cvEnglish.pdf
-
-
+        url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
+  - title: "Cursos/classes" 
+    children:
+      - title: "Elección Pública III"
+        url: https://github.com/emagar/ep3
+      - title: "Política Comparada II"
+        url: https://github.com/emagar/pc2
+      - title: "Política Comparada III"
+        url: https://github.com/emagar/pc3
+  - title: "Data/code"
+    url: https://github.com/emagar/
+#  - title: "Papers"
+#  - title: "Talks"
+#  - title: "Fun"
+#  - title: "Links"
 
 
         
