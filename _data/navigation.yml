@@ -22,11 +22,12 @@ prof:
   - title: "Contact"
     url: /contact/
   - title: "CV"
-    children:
-      - title: "español"
-        url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
-      - title: "English"
-        url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
+    url: /cv/
+    # children:
+    #   - title: "español"
+    #     url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
+    #   - title: "English"
+    #     url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
   - title: "Cursos/classes" 
     children:
       - title: "Elección Pública III"
