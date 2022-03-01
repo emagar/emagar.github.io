@@ -1,0 +1,7 @@
+Starting resolution (2022-03-01 04:51:02 -0600)
+User-requested dependencies: [#<Gem::Resolver::DependencyRequest:0x00005585f0953a50 @dependency=<Gem::Dependency type=:runtime name="did_you_mean" requirements="= 1.4.0">, @requester=nil>, #<Gem::Resolver::DependencyRequest:0x00005585f09538e8 @dependency=<Gem::Dependency type=:runtime name="bundler" requirements="= 2.3.8">, @requester=nil>]
+Resolving dependencies...Creating possibility state for did_you_mean (= 1.4.0) (1 remaining)
+
+Finished resolution (1 steps) (Took 0.004012274 seconds) (2022-03-01 04:51:02 -0600)
+Unactivated: did_you_mean, bundler
+Activated: 
