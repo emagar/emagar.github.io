@@ -12,17 +12,18 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "defau
 # Site Settings
 locale                   : "es-MX" # "en-US"
 #title                    : "El blog de CiPol" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
-title                    : "emagar, blog" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
+title                    : "Democracia decodificada" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
 title_separator          : "|"
 
 name                     : "Eric Magar"
-description              : "Investigamos lo bueno, lo malo y lo feo de la democracia mexicana"
+#description              : "Investigamos lo bueno, lo malo y lo feo de la democracia mexicana"
+description              : "Elecciones, partidos, instituciones"
 url                      : "https://emagar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "emagar/emagar.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
+words_per_minute         : 180
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
