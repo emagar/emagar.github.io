@@ -38,7 +38,8 @@ prof:
         url: https://github.com/emagar/pc3
   - title: "Data/code"
     url: https://github.com/emagar/
-#  - title: "Papers"
+  - title: "Election data in Gsheets"
+    url: /view-in-gSheets/
 #  - title: "Talks"
 #  - title: "Fun"
 #  - title: "Links"

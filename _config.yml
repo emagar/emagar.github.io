@@ -12,12 +12,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "defau
 # Site Settings
 locale                   : "es-MX" # "en-US"
 #title                    : "El blog de CiPol" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
-title                    : "Política decodificada" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
+title                    : "Política ~decodificada~" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
 title_separator          : "|"
 
 name                     : "Eric Magar"
-#description              : "Investigamos lo bueno, lo malo y lo feo de la democracia mexicana"
-description              : "Elecciones, partidos, instituciones"
+description              : "Investigamos lo bueno, lo malo y lo feo de la democracia mexicana"
 url                      : "https://emagar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "emagar/emagar.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -118,7 +117,7 @@ author:
   keybase          :
   instagram        :
   lastfm           :
-  linkedin         : # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
+  linkedin         : "ericmagar" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   mastodon         :
   pinterest        :
   soundcloud       :
