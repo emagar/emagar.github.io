@@ -6,7 +6,7 @@ title: The measurement of electoral history 1994--2018
 # subtitle: 
 author: eric.magar
 date:   2019-11-06
-last_modified_at: 2021-07-22
+last_modified_at: 2023-05-26
 toc: false
 mathjax: true
 # teaser: /assets/img/pirinola.jpg
@@ -23,7 +23,7 @@ tags:
 </p>
 
 <p>
-This note presents, discusses, and distributes statistics (available <a href="https://github.com/emagar/mxDistritos">here</a>) of party electoral performance in Mexico's competitive era. It elaborates two quantities of interest: <b>voting forecasts</b> based on recent electoral history and measures of parties' <b>core support</b>. The procedure generates summary measures of recent electoral history in relatively small geographic units, municipalities (\(N \approx 2500\)) and <i>secciones electorales</i> (\(N \approx 66000\)) throughout Mexico. I apply the procedure to four federal congressional elections between 2009 and 2018 <del>(I will soon apply it to municipal races too)</del>, using results since 1994 as historical input.
+This note presents, discusses, and distributes statistics (available <a href="https://github.com/emagar/elecRetrns/data/v-hat-etc">here</a>) of party electoral performance in Mexico's competitive era. It elaborates two quantities of interest: <b>voting forecasts</b> based on recent electoral history and measures of parties' <b>core support</b>. The procedure generates summary measures of recent electoral history in relatively small geographic units, municipalities (\(N \approx 2500\)) and <i>secciones electorales</i> (\(N \approx 66000\)) throughout Mexico. I apply the procedure to four federal congressional elections between 2009 and 2018 <del>(I will soon apply it to municipal races too)</del>, using results since 1994 as historical input.
 </p>
 
 <p>
@@ -34,14 +34,14 @@ The note starts by showing the statistics in action to get a glimpse of their de
 Later sections offer methodological detail on the estimation of these quantities of interest and are increasingly technical. 
 </p>
 
-<div id="outline-container-orga7fc90a" class="outline-2">
-<h2 id="orga7fc90a"><span class="section-number-2">1</span> Statistics in action<a id="org7b7c0c8"></a></h2>
+<div id="outline-container-orgbc852ff" class="outline-2">
+<h2 id="orgbc852ff"><span class="section-number-2">1</span> Statistics in action<a id="org47cb583"></a></h2>
 <div class="outline-text-2" id="text-1">
 <p>
-Table <a href="#orgc021945">1</a> presents two pairs of diagrams for the 2015 (below) and 2018 (above) congressional elections. Each dot represents one municipality, colored according to the winning party, with coordinates in the ternary plot according to the relative votes of the PAN, the PRI, and the left in the federal deputy race (other smaller parties are excluded).<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
+Table <a href="#org44fbad9">1</a> presents two pairs of diagrams for the 2015 (below) and 2018 (above) congressional elections. Each dot represents one municipality, colored according to the winning party, with coordinates in the ternary plot according to the relative votes of the PAN, the PRI, and the left in the federal deputy race (other smaller parties are excluded).<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
 </p>
 
-<table id="orgc021945" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org44fbad9" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 1:</span> Historic expectations and municipal-level vote in two congressional elections</caption>
 
 <colgroup>
@@ -80,10 +80,10 @@ Third, the PAN <i>vs</i> left competition was legal tender in 2018. The pattern 
 
 
 <p>
-Plots in Table <a href="#org8e63f3d">2</a> report <i>secciones electorales</i> and therefore offer much finer-grained than the previous portraits. They introduce the other quantity of interest in this note: parties' <i>core support</i>. The idea behind this statistic is measuring the size of the group that has historically supported the party consistently, in good but also in bad years. 
+Plots in Table <a href="#org91adefc">2</a> report <i>secciones electorales</i> and therefore offer much finer-grained than the previous portraits. They introduce the other quantity of interest in this note: parties' <i>core support</i>. The idea behind this statistic is measuring the size of the group that has historically supported the party consistently, in good but also in bad years. 
 </p>
 
-<table id="org8e63f3d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<table id="org91adefc" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 2:</span> Support core and party performance in 2018</caption>
 
 <colgroup>
@@ -107,17 +107,17 @@ The horizontal axis in each plot measures the size of party core support groups 
 </p>
 
 <p>
-The vertical axis reports the three parties' performance in 2018 (the difference between the observed vote and the forecast). Positive values indicate that the party excelled expectations in the <i>sección</i>, negative ones that it under-performed it expectation. The PRI's electoral disaster appears all too clearly in the red plot. There were a few secciones with positive performance, but the density concentrates massively below the horizontal zero line, something that Table <a href="#orgc021945">1</a> had hinted. What is truly remarkable is that the dismal performance is directly proportional to the size of the PRI core. President Peña and candidate Meade achieved what seemed, if not impossible, extremely improbable: they alienated the PRI's unconditional voters in 2018. The PAN and the left met expectations in secciones where they have enjoyed with groups of support. Both (especially Morena) over-achieved where they lack important cores, taking away PRI voters. 
+The vertical axis reports the three parties' performance in 2018 (the difference between the observed vote and the forecast). Positive values indicate that the party excelled expectations in the <i>sección</i>, negative ones that it under-performed it expectation. The PRI's electoral disaster appears all too clearly in the red plot. There were a few secciones with positive performance, but the density concentrates massively below the horizontal zero line, something that Table <a href="#org44fbad9">1</a> had hinted. What is truly remarkable is that the dismal performance is directly proportional to the size of the PRI core. President Peña and candidate Meade achieved what seemed, if not impossible, extremely improbable: they alienated the PRI's unconditional voters in 2018. The PAN and the left met expectations in secciones where they have enjoyed with groups of support. Both (especially Morena) over-achieved where they lack important cores, taking away PRI voters. 
 </p>
 
 <p>
-The note elaborates how statistics were prepared (replication code can be found <a href="https://github.com/emagar/mxDistritos/code/elec-data-for-maps.r">here</a>).
+The note elaborates how statistics were prepared (replication code can be found <a href="https://github.com/emagar/elecRetrns/code/v-hat-etc/elec-data-for-maps.r">here</a>).
 </p>
 </div>
 </div>
 
-<div id="outline-container-org62ef295" class="outline-2">
-<h2 id="org62ef295"><span class="section-number-2">2</span> First differences</h2>
+<div id="outline-container-org477a061" class="outline-2">
+<h2 id="org477a061"><span class="section-number-2">2</span> First differences</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 One common approach to study electoral change is through first differences. Denoting \(v_t\) the party's vote share in the municipality or the <i>sección</i>, in period \(t\), the first difference is simply \(d_t = v_t - v_{t-1}\). 
@@ -133,8 +133,8 @@ One common approach to study electoral change is through first differences. Deno
 </div>
 </div>
 
-<div id="outline-container-orgaf95cd7" class="outline-2">
-<h2 id="orgaf95cd7"><span class="section-number-2">3</span> The recent linear trend</h2>
+<div id="outline-container-org23091fd" class="outline-2">
+<h2 id="org23091fd"><span class="section-number-2">3</span> The recent linear trend</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 One way of adopting it is with <i>vote forecasting</i> from trends discernible in the previous five congressional races (Magar 2012). I summarize the central tendency of the recent historical vote by means of linear estimation in time, fitting a straight line for each year analyzed and each party in the municipality or <i>sección electoral</i>. 
@@ -158,8 +158,8 @@ that I then use to predict \(\hat{v}_{u2018} = \hat{a} + \hat{b} \times 2018\). 
 </div>
 </div>
 
-<div id="outline-container-orgec96d2c" class="outline-2">
-<h2 id="orgec96d2c"><span class="section-number-2">4</span> The party's support core</h2>
+<div id="outline-container-org5897d05" class="outline-2">
+<h2 id="org5897d05"><span class="section-number-2">4</span> The party's support core</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 The other historical statistic is the parties' core support in the unit. Its definition stems from classifying voters in three categories: (1) support groups, that in the past have consistently supported the party; (2) opposition groups, that have consistently supported another party; and (3) swing groups, that have neither consistently supported nor consistently opposed the party (Cox and McCubbins 1986). The party core consists of the support groups. 
@@ -187,8 +187,8 @@ A critique that can be anticipated towards this measure of the party's support c
 </div>
 </div>
 
-<div id="outline-container-org60332f6" class="outline-2">
-<h2 id="org60332f6"><span class="section-number-2">5</span> Compositional variables</h2>
+<div id="outline-container-org9b3b4f0" class="outline-2">
+<h2 id="org9b3b4f0"><span class="section-number-2">5</span> Compositional variables</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 I close with an important feature of the model specifications, associated with the <i>compositional</i> nature of electoral returns. Compositional variable are quantitative descriptions of the parts of a whole. They therefore have two characteristics: (1) they are proportions that (2) add up to unity.<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> 
@@ -226,8 +226,8 @@ These are the quantities that the distributed data report.
 </div>
 </div>
 
-<div id="outline-container-orgeea1a37" class="outline-2">
-<h2 id="orgeea1a37"><span class="section-number-2">6</span> References</h2>
+<div id="outline-container-org9e2f482" class="outline-2">
+<h2 id="org9e2f482"><span class="section-number-2">6</span> References</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li>Aitchison, John. 1986. <i>The Statistical Analysis of Compositional Data</i>. New York: Chapman and Hall.</li>
