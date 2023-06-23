@@ -85,6 +85,15 @@ Formally, letting \(T_1, T_2, \dots\) be contiguous census years, a given unit's
 \[\text{pop}_t = \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \forall t \in (T_2,T_3)\] 
 </p>
 
+
+<p>
+\[\text{pop}_t = \left\{
+     & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \forall t \in (T_1,T_2) \\
+     & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \forall t \in (T_2,T_3)
+\right\]
+</p>
+
+
 <p>
 Figure <a href="#org208b1b2">1</a> below illustrates segments projection with two municipalities in the northern state of Coahuila. Progreso municipality had nearly flat voting-age population growth in the period. Pay attention to circles in the plot only, black is for census values, white for projections. Fitting separate linear segments for each inter-census period accommodates changing trends of demographic change: a slight dip is visible between 1995 and 2010. Ramos Arizpe municipality is very different, with a sharp and accelerating surge in voting age population in the same period.  
 </p>
