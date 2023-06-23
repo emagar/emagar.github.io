@@ -87,10 +87,15 @@ Formally, letting \(T_1, T_2, \dots\) be contiguous census years, a given unit's
 
 
 <p>
-\[\text{pop}_t = \{
-     & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \forall t \in [T_1,T_2] \\
-     & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \forall t \in [T_2,T_3] \\
-     & ...\]
+$$\text{pop}<sub>t</sub> = \{
+</p>
+\begin{aligned}     
+  & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \forall t \in [T_1,T_2] \\
+  & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \forall t \in [T_2,T_3] \\
+  & ...
+\end{aligned}     
+<p>
+$$
 </p>
 
 
@@ -99,7 +104,7 @@ Figure <a href="#org208b1b2">1</a> below illustrates segments projection with tw
 </p>
 
 <table id="org208b1b2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Tabla 1</span> Voting age in Ramos Arizpe</caption>
+<caption class="t-above"><span class="table-number">Tabla 1</span> Voting age population in two municipalities</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -108,8 +113,8 @@ Figure <a href="#org208b1b2">1</a> below illustrates segments projection with tw
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left"><img src="file:///home/eric/Downloads/Desktop/MXelsCalendGovt/censos/plots/mu5026p18-interpol.png" alt="mu5026p18-interpol.png" /></td>
-<td class="org-left"><img src="file:///home/eric/Downloads/Desktop/MXelsCalendGovt/censos/plots/mu5027p18-interpol.png" alt="mu5027p18-interpol.png" /></td>
+<td class="org-left"><img src="../assets/img/mu5026p18-interpol.png" alt="mu5026p18-interpol.png" /></td>
+<td class="org-left"><img src="../assets/img/mu5027p18-interpol.png" alt="mu5027p18-interpol.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -119,6 +124,37 @@ Figure <a href="#org208b1b2">1</a> below illustrates segments projection with tw
 <div id="outline-container-orgde6811a" class="outline-2">
 <h2 id="orgde6811a"><span class="section-number-2">5</span> The linear and log-linear models</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+The linear approach involves regressing census indicators on time, in order to estimate the central trend in the demographic data, then using the regression line to obtain point predictions for non-census years. The log-linear approach does the same, but log tranforming the census data to capture an increasing trend in time. Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) predictions of voting age population against the censuses (in solid black). In Ramos Arizpe, the log-linear&#x2026; 
+</p>
+
+<table id="org0a2fb23" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Tabla 2</span> Comparing the linear and log-linear models in two municipalities</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/mu5027p18-interlog.png" alt="mu5027p18-interlog.png" /></td>
+<td class="org-left"><img src="../assets/img/mu5034p18-interlog.png" alt="mu5034p18-interlog.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Sierra Mojada municipality is a case of extremely poor regression fit, census data are highly volatile. This is true of the linear and log-linear fit. Cases are rare (stats), but led my choice to rely on the following combination:
+</p>
+
+<ul class="org-ul">
+<li>the segments model is used to interpolate inter-census years</li>
+<li>the log-linear model is used to extrapolate years prior to the first census and years after the latest.</li>
+</ul>
+<p>
+Elaborate that segments 
+</p>
 </div>
 </div>
 <div id="footnotes">
