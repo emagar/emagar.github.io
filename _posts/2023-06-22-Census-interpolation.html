@@ -5,8 +5,8 @@ classes: wide
 title: Estimation of inter-census quantities
 # subtitle: 
 author: eric.magar
-date:   2023-06-22
-last_modified_at: 2023-06-22
+date:   2023-06-23
+last_modified_at: 2023-06-23
 toc: false
 mathjax: true
 # teaser: /assets/img/pirinola.jpg
@@ -87,15 +87,11 @@ Formally, letting \(T_1, T_2, \dots\) be contiguous census years, a given unit's
 
 
 <p>
-$$\text{pop}<sub>t</sub> = \{
-</p>
-\begin{aligned}     
-  & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \forall t \in [T_1,T_2] \\
-  & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \forall t \in [T_2,T_3] \\
-  & ...
-\end{aligned}     
-<p>
-$$
+\[\text{pop}_t = \left\lbrace\begin{aligned}     
+      & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \forall t \in [T_1,T_2] \\
+      & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \forall t \in [T_2,T_3] \\
+      & ...
+    \end{aligned}\right.\]
 </p>
 
 
