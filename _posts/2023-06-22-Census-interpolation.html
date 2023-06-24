@@ -74,33 +74,23 @@ A further obstacle is that the census bureau began distribution of sección-leve
 <h2 id="org815849c"><span class="section-number-2">4</span> The segments model</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-Formally, letting \(T_1, T_2, \dots\) be contiguous census years, a given unit's population in year \(t\) in the segment model is:
+A given unit's population in some year in the segment model is the previous census population plus the yearly inter-census population change times the number of years sine the last census. Formally, if \(T_1, T_2, \dots\) are contiguous census years, a given unit's population in year \(t\) is:
 </p>
-
-<p>
-\[\text{pop}_t = \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \; \text{for} \; t \in [T_1,T_2]\] 
-</p>
-
-<p>
-\[\text{pop}_t = \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \; \text{for} \; t \in [T_2,T_3]\] 
-</p>
-
 
 <p>
 \[\text{pop}_t = \left\lbrace\begin{aligned}     
-      & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \forall t \in [T_1,T_2] \\
-      & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \forall t \in [T_2,T_3] \\
-      & ...
+      & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \; \text{for} \; t \in [T_1,T_2] \\
+      & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \; \text{for} \; t \in [T_2,T_3] \\
+      & \dots
     \end{aligned}\right.\]
 </p>
 
-
 <p>
-Figure <a href="#org208b1b2">1</a> below illustrates segments projection with two municipalities in the northern state of Coahuila. Progreso municipality had nearly flat voting-age population growth in the period. Pay attention to circles in the plot only, black is for census values, white for projections. Fitting separate linear segments for each inter-census period accommodates changing trends of demographic change: a slight dip is visible between 1995 and 2010. Ramos Arizpe municipality is very different, with a sharp and accelerating surge in voting age population in the same period.  
+The Figure below illustrates segments projection with two municipalities in the northern state of Coahuila. Progreso municipality had nearly flat voting-age population growth in the period. Pay attention to circles in the plot only, black is for census values, white for projections. Fitting separate linear segments for each inter-census period accommodates changing trends of demographic change: a slight dip is visible between 1995 and 2010. Ramos Arizpe municipality is very different, with a sharp and accelerating surge in voting age population in the same period.  
 </p>
 
-<table id="org208b1b2" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Tabla 1</span> Voting age population in two municipalities</caption>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
 
 <colgroup>
 <col  class="org-left" />
@@ -121,11 +111,15 @@ Figure <a href="#org208b1b2">1</a> below illustrates segments projection with tw
 <h2 id="orgde6811a"><span class="section-number-2">5</span> The linear and log-linear models</h2>
 <div class="outline-text-2" id="text-5">
 <p>
-The linear approach involves regressing census indicators on time, in order to estimate the central trend in the demographic data, then using the regression line to obtain point predictions for non-census years. The log-linear approach does the same, but log tranforming the census data to capture an increasing trend in time. Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) predictions of voting age population against the censuses (in solid black). In Ramos Arizpe, the log-linear&#x2026; 
+The linear approach involves regressing census indicators on time, in order to estimate the central trend in the demographic data, then using the regression line to obtain point predictions for non-census years. The log-linear approach does the same, but log tranforming the census data to allow an increasing trend in time. Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) predictions of voting age population against the censuses (in solid black). Regression projections do not match census points as segments did, they pick the central trend only. In Ramos Arizpe, the log-linear approximates the data more closely than the linear, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
+</p>
+
+<p>
+Goodness of fit 
 </p>
 
 <table id="org0a2fb23" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Tabla 2</span> Comparing the linear and log-linear models in two municipalities</caption>
+<caption class="t-above"><span class="table-number">Tabla 1</span> Comparing the linear and log-linear models in two municipalities</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -141,8 +135,9 @@ The linear approach involves regressing census indicators on time, in order to e
 </table>
 
 <p>
-Sierra Mojada municipality is a case of extremely poor regression fit, census data are highly volatile. This is true of the linear and log-linear fit. Cases are rare (stats), but led my choice to rely on the following combination:
+Sierra Mojada municipality is a case of extremely poor regression fit. Census data are highly volatile, pulled by the ebbs and flows of two large mining corporations in the area. Cases are rare (stats). But led my choice to rely on the following combination:
 </p>
+
 
 <ul class="org-ul">
 <li>the segments model is used to interpolate inter-census years</li>
