@@ -66,11 +66,11 @@ Projection requires assumptions, among which are the following:
 </div>
 </div>
 
-<div id="outline-container-orgfad9ca0" class="outline-2">
-<h2 id="orgfad9ca0"><span class="section-number-2">3</span> The segments projection</h2>
+<div id="outline-container-orgcc79e13" class="outline-2">
+<h2 id="orgcc79e13"><span class="section-number-2">3</span> Segments projection</h2>
 <div class="outline-text-2" id="text-3">
 <p>
-In this approach, a given unit's population in any year is its previous census population plus the number of years since the last census times the yearly inter-census population change. Formally, if \(t_1, t_2, \dots\) are contiguous census years, a given unit's population pop for year \(t\) is:
+In this approach, a given unit's population in any year is the population recorded in the previous census plus the yearly inter-census population change times the years since that census. Formally, if \(t_1, t_2, \dots\) are contiguous census years, a given unit's population for year \(t\) is:
 </p>
 
 <p>
@@ -82,7 +82,7 @@ In this approach, a given unit's population in any year is its previous census p
 </p>
 
 <p>
-The plots below illustrate segments projection with two municipalities in the northern state of Coahuila. Ocampo municipality lost voting age population steadily in the period. Pay attention to circles in the plot only, black are census values, white segments projections. A milder drop followed a partial recovery in 2005. Fitting separate straingth segments for each inter-census period accommodates changing trends of demographic change. Ramos Arizpe municipality is quite different, experiencing a sharp surge in voting age population in the same period. Contiguous segments with steeper slopes capture what appears to be an accelerating trend in the period. 
+The plots below illustrate segments projection in two municipalities in the northern state of Coahuila. Ocampo municipality lost voting age population steadily in the period. Pay attention to circles in the plot only, black are census values, white are segments projections. The drop decelerated after a partial recovery in 2005-2010. Fitting separate straight segments for each inter-census period accommodates changing trends of demographic change. Ramos Arizpe municipality is quite different, experiencing a sharp surge in voting age population in the same period. Segments with steeper slopes capture what appears to be accelerating voting age population growth in the period. 
 </p>
 
 <table id="org93ba972" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -102,16 +102,20 @@ The plots below illustrate segments projection with two municipalities in the no
 </table>
 
 <p>
-A drawback may materialize when backwards projecting, extra-polating beyond the first (or forward after the last) census available. Pulling the 1995-2000 segment to prior years in Ocampo projects steep continuous demographic decline. Absent an earlier census, it remains uncertain whether or not this captures the actual demographic progress. 
+Unlike interpolation, extrapolating extends the first/last segments backwards/forward. Pulling the 1995-2000 segment to prior years in Ocampo projects steep continuous demographic decline. Whether or not 1995-2000 captures the actual longer-term demographic progress is uncertain. 
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgde6811a" class="outline-2">
-<h2 id="orgde6811a"><span class="section-number-2">4</span> The linear and log-linear models</h2>
+<div id="outline-container-org59942b0" class="outline-2">
+<h2 id="org59942b0"><span class="section-number-2">4</span> Linear and log-linear projections</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-The further temporally apart from a census point, the less reliable any longitudinal projection becomes. But both other approaches rely on the full census series, and not just the extreme segment, when attempting to extra-polate beyond a limiting census. The linear approach involves regressing a unit's census values on time, thus estimating the central trend of demographic change for the full period observed. This regression line is then used to make point predictions for all non-census years. The log-linear approach does the same, but tranforming the census data to allow increasing trends in time. Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses (in solid black). Regression projections do not match census points as segments did, but in most cases they summarize the central trend neatly. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
+The further temporally apart from a census point, the less reliable any longitudinal projection becomes. But both other approaches rely on the full census series, and not just the extreme segment, when attempting to extra-polate beyond a limiting census. The linear approach involves regressing a unit's census values on time, thus estimating the central trend of demographic change for the full period observed. This regression line is then used to make point predictions for all non-census years. The log-linear approach does the same, but tranforming the census data to allow increasing trends in time. 
+</p>
+
+<p>
+Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses from which they derive (in solid black). Regression projections do not match census points as segments did, but in most cases they summarize the central trend neatly. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
 </p>
 
 <p>
