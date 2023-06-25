@@ -5,8 +5,8 @@ classes: wide
 title: Estimation of inter-census quantities
 # subtitle: 
 author: eric.magar
-date:   2023-06-23
-last_modified_at: 2023-06-23
+date:   2023-06-24
+last_modified_at: 2023-06-24
 toc: false
 mathjax: true
 # teaser: /assets/img/pirinola.jpg
@@ -22,19 +22,22 @@ The longitudinal analysis of elections is richer when socio-demographic controls
 </p>
 
 <p>
-Systematic analysis of municipalities large and small (N &asymp; 2500), of less common units like federal or state electoral districts, or of much more disaggregated units like secciones electorales (N &asymp; 67k) necessitates self-estimation of off-census socio-demographic indicators from official data. This note discusses one approach to achieve this.
+Systematic analysis of municipalities large and small (N &asymp; 2500), of less common units such as federal or state electoral districts, or of much more disaggregated units like secciones electorales (N &asymp; 67k) necessitates self-estimation of off-census socio-demographic indicators from official data. This note discusses one way to achieve this.
 </p>
 
 <div id="outline-container-org452b5f4" class="outline-2">
 <h2 id="org452b5f4"><span class="section-number-2">1</span> Filling gaps through projection</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-The problem, for illustrative purposes, is obtaining sección-level voting age populations for triennial federal elections from 1994 to 2021. In the period, INEGI distributes population counts for 1990, 2000, 2010, and 2020 (General Censuses) and mid-decade counts in 1995 and 2005.<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> 
-From here on, I use the term census to refer to counts and censuses indistinctly. 
+Voting age population in triennial federal elections from 1994 to 2021, one denominator to compute turnout rates, illustrates the problem, but the method extends to other socio-demographic aggregate quantities. In the period, the census bureau distributes population counts for 1990, 2000, 2010, and 2020&#x2014;four "general censuses"&#x2014;and mid-decade counts in 1995 and 2005&#x2014;two "general counts".<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> (From here on, `census' refers to counts and censuses indistinctly.)  
 </p>
 
 <p>
-I proceed with inter- and extra-polation to project socio-demographic indicators for non-census years from the census/conteo figures available. Three approaches are inspected here: 
+Inter- and extra-polating the population 18 years or older 
+</p>
+
+<p>
+The population 18 years and older for non-census years can be projected, with inter- and extra-polation and with some assumptions, from the census figures available. Three approaches are inspected here: 
 </p>
 
 <ul class="org-ul">
@@ -44,53 +47,46 @@ I proceed with inter- and extra-polation to project socio-demographic indicators
 </ul>
 
 <p>
-A further obstacle is that the census bureau began distribution of sección-level census aggregates only in 2005.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> Whereas five census points are available for municipalities (1995 2000 2005 2010 2020), there are only three for secciones (2005 2010 2020). 
+I project the voting age population of municipalities secciones electorales. A further obstacle is that the census bureau began distribution of sección-level census aggregates only in 2005.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> So whereas five census points are available for municipal projections (1995 2000 2005 2010 2020), there are three only for secciones (2005 2010 2020). 
 </p>
-</div>
-</div>
-
-<div id="outline-container-org1a9a1e5" class="outline-2">
-<h2 id="org1a9a1e5"><span class="section-number-2">2</span> Three principles</h2>
-<div class="outline-text-2" id="text-2">
-<ol class="org-ol">
-<li>Projection requires at least two different census points, to infer change.</li>
-<li>Longitudinal projection becomes less reliable the further you move away from a census point.</li>
-<li>Therefore, the more census points the better the projection.</li>
-</ol>
 </div>
 </div>
 
 <div id="outline-container-org568314d" class="outline-2">
-<h2 id="org568314d"><span class="section-number-2">3</span> Assumptions</h2>
-<div class="outline-text-2" id="text-3">
+<h2 id="org568314d"><span class="section-number-2">2</span> Assumptions</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Projection requires assumptions, among which are the following:
+</p>
+
 <ol class="org-ol">
-<li>While population counts are discrete variables, they are modeled as continuous variables.</li>
-<li>Each approach has a demographic trend model: the procession is straight in the segment and linear projection approaches, and curvilinear in the log-linear approach.</li>
+<li>Population counts, which are discrete variables, are modeled as continuous and differentiable, in order to obtain slopes.</li>
+<li>A trend model underlies each approach: a straight demographic procession in the segment and linear projections, a curvilinear in the log-linear; fitting one trend for each pair of contiguous censuses in the segment approach, or a central trend for the unit from all the censuses in the other approaches.</li>
 </ol>
 </div>
 </div>
 
-<div id="outline-container-org815849c" class="outline-2">
-<h2 id="org815849c"><span class="section-number-2">4</span> The segments model</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-orgfad9ca0" class="outline-2">
+<h2 id="orgfad9ca0"><span class="section-number-2">3</span> The segments projection</h2>
+<div class="outline-text-2" id="text-3">
 <p>
-A given unit's population in some year in the segment model is the previous census population plus the yearly inter-census population change times the number of years sine the last census. Formally, if \(T_1, T_2, \dots\) are contiguous census years, a given unit's population in year \(t\) is:
+In this approach, a given unit's population in any year is its previous census population plus the number of years since the last census times the yearly inter-census population change. Formally, if \(t_1, t_2, \dots\) are contiguous census years, a given unit's population pop for year \(t\) is:
 </p>
 
 <p>
 \[\text{pop}_t = \left\lbrace\begin{aligned}     
-      & \text{pop}_{T_1} + \frac{\text{pop}_{T_2} - \text{pop}_{T_1}}{T_2 - T_1} \times (t - T_1) \; \; \text{for} \; t \in [T_1,T_2] \\
-      & \text{pop}_{T_2} + \frac{\text{pop}_{T_3} - \text{pop}_{T_2}}{T_3 - T_2} \times (t - T_2) \; \; \text{for} \; t \in [T_2,T_3] \\
+      & \text{pop}_{t_1} + \frac{\text{pop}_{t_2} - \text{pop}_{t_1}}{t_2 - t_1} \times (t - t_1) \; \; \text{for} \; t \in [t_1,t_2] \\
+      & \text{pop}_{t_2} + \frac{\text{pop}_{t_3} - \text{pop}_{t_2}}{t_3 - t_2} \times (t - t_2) \; \; \text{for} \; t \in [t_2,t_3] \\
       & \dots
     \end{aligned}\right.\]
 </p>
 
 <p>
-The Figure below illustrates segments projection with two municipalities in the northern state of Coahuila. Progreso municipality had nearly flat voting-age population growth in the period. Pay attention to circles in the plot only, black is for census values, white for projections. Fitting separate linear segments for each inter-census period accommodates changing trends of demographic change: a slight dip is visible between 1995 and 2010. Ramos Arizpe municipality is very different, with a sharp and accelerating surge in voting age population in the same period.  
+The plots below illustrate segments projection with two municipalities in the northern state of Coahuila. Ocampo municipality lost voting age population steadily in the period. Pay attention to circles in the plot only, black are census values, white segments projections. A milder drop followed a partial recovery in 2005. Fitting separate straingth segments for each inter-census period accommodates changing trends of demographic change. Ramos Arizpe municipality is quite different, experiencing a sharp surge in voting age population in the same period. Contiguous segments with steeper slopes capture what appears to be an accelerating trend in the period. 
 </p>
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
+<table id="org93ba972" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Voting age population in two municipalities</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -99,19 +95,23 @@ The Figure below illustrates segments projection with two municipalities in the 
 </colgroup>
 <tbody>
 <tr>
-<td class="org-left"><img src="../assets/img/mu5026p18-interpol.png" alt="mu5026p18-interpol.png" /></td>
+<td class="org-left"><img src="../assets/img/mu5023p18-interpol.png" alt="mu5023p18-interpol.png" /></td>
 <td class="org-left"><img src="../assets/img/mu5027p18-interpol.png" alt="mu5027p18-interpol.png" /></td>
 </tr>
 </tbody>
 </table>
+
+<p>
+A drawback may materialize when backwards projecting, extra-polating beyond the first (or forward after the last) census available. Pulling the 1995-2000 segment to prior years in Ocampo projects steep continuous demographic decline. Absent an earlier census, it remains uncertain whether or not this captures the actual demographic progress. 
+</p>
 </div>
 </div>
 
 <div id="outline-container-orgde6811a" class="outline-2">
-<h2 id="orgde6811a"><span class="section-number-2">5</span> The linear and log-linear models</h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="orgde6811a"><span class="section-number-2">4</span> The linear and log-linear models</h2>
+<div class="outline-text-2" id="text-4">
 <p>
-The linear approach involves regressing census indicators on time, in order to estimate the central trend in the demographic data, then using the regression line to obtain point predictions for non-census years. The log-linear approach does the same, but log tranforming the census data to allow an increasing trend in time. Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) predictions of voting age population against the censuses (in solid black). Regression projections do not match census points as segments did, they pick the central trend only. In Ramos Arizpe, the log-linear approximates the data more closely than the linear, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
+The further temporally apart from a census point, the less reliable any longitudinal projection becomes. But both other approaches rely on the full census series, and not just the extreme segment, when attempting to extra-polate beyond a limiting census. The linear approach involves regressing a unit's census values on time, thus estimating the central trend of demographic change for the full period observed. This regression line is then used to make point predictions for all non-census years. The log-linear approach does the same, but tranforming the census data to allow increasing trends in time. Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses (in solid black). Regression projections do not match census points as segments did, but in most cases they summarize the central trend neatly. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
 </p>
 
 <p>
@@ -119,7 +119,7 @@ Goodness of fit
 </p>
 
 <table id="org0a2fb23" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Tabla 1</span> Comparing the linear and log-linear models in two municipalities</caption>
+<caption class="t-above"><span class="table-number">Table 2:</span> Comparing the linear and log-linear models in two municipalities</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -138,7 +138,6 @@ Goodness of fit
 Sierra Mojada municipality is a case of extremely poor regression fit. Census data are highly volatile, pulled by the ebbs and flows of two large mining corporations in the area. Cases are rare (stats). But led my choice to rely on the following combination:
 </p>
 
-
 <ul class="org-ul">
 <li>the segments model is used to interpolate inter-census years</li>
 <li>the log-linear model is used to extrapolate years prior to the first census and years after the latest.</li>
@@ -148,12 +147,23 @@ Elaborate that segments
 </p>
 </div>
 </div>
+
+<div id="outline-container-org1a9a1e5" class="outline-2">
+<h2 id="org1a9a1e5"><span class="section-number-2">5</span> Three principles</h2>
+<div class="outline-text-2" id="text-5">
+<ol class="org-ol">
+<li>Projection requires a minimum of two distinct census points, to infer change in the unit.</li>
+<li>The further away temporally from a census point, the less reliable the longitudinal projection.</li>
+<li>Therefore, the more census points the better the projection.</li>
+</ol>
+</div>
+</div>
 <div id="footnotes">
-<h2 class="footnotes">Nota al pie de p&aacute;gina: </h2>
+<h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-INEGI replaced mid-decade `conteos' with a sample in 2015. Conteos Generales in 1995 and 2005 were a mini census, with a basic questionnaire excluding most items used in general censuses and with limited effort to re-interview non-responders. An opinion poll method was used instead in 2015, much cheaper yet hardly comparable. 
+INEGI replaced mid-decade `conteos' with a sample in 2015. Conteos Generales in 1995 and 2005 were a mini census, with a basic questionnaire excluding most items used in general censuses and with limited effort to re-interview non-responders. An opinion poll method was used instead in 2015, much cheaper yet hardly comparable. This note excludes the 1990 census because the voting age population, unavailable from the web page, requires a special request.
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
