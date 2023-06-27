@@ -115,7 +115,7 @@ The further temporally apart from a census point, the less reliable any longitud
 </p>
 
 <p>
-Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses from which they derive (in solid black). Regression projections do not match census points as segments did, but in most cases they summarize the central trend neatly. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
+Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses from which they derive (in solid black). Regression projections do not match census points as segments did but, in most cases, they summarize the central trend neatly. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
 </p>
 
 <p>
@@ -133,22 +133,133 @@ Goodness of fit
 <tbody>
 <tr>
 <td class="org-left"><img src="../assets/img/mu5027p18-interlog.png" alt="mu5027p18-interlog.png" /></td>
-<td class="org-left"><img src="../assets/img/mu5034p18-interlog.png" alt="mu5034p18-interlog.png" /></td>
+<td class="org-left"><img src="../assets/img/mu19041p18-interlog.png" alt="mu19041p18-interlog.png" /></td>
 </tr>
 </tbody>
 </table>
 
 <p>
-Sierra Mojada municipality is a case of extremely poor regression fit. Census data are highly volatile, pulled by the ebbs and flows of two large mining corporations in the area. Cases are rare (stats). 
-</p>
-
-
-<p>
-The table below reports models' quadratic mean of errors (residuals) in census years. The quantities are divided by the municipio's mean voting age population in the period, in order to express performance statistics in the same unit (i.e. shares, so 0.05 means that predictions were 5 percent off the census observations on average). 
+Pesquería municipality in Nuevo León state is a case of extremely poor regression fit. Reached in the second half of the 2010s by Monterrey's suburban area, census data are highly volatile. Such cases are present, but extremely rare. The table below reports regression models' quadratic mean of errors (residuals) in census years. Quantities are divided by the municipio's mean voting age population in the period, and this way performance statistics are expressed as shares: a Relative Quadratic Mean Residual RQMR = 0.351 in Pesquería means that predictions are 35 percent off the census observations on average. Pesquería stands at the 99.96th percentile, among the bottom four hundredths percent with poorest fit.
 </p>
 
 <table id="org683de4e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption class="t-above"><span class="table-number">Table 3:</span> How far off are predictions in five census years (as a share of the mean municipal population)</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Reverse percentile</th>
+<th scope="col" class="org-right">100%</th>
+<th scope="col" class="org-right">99%</th>
+<th scope="col" class="org-right">95%</th>
+<th scope="col" class="org-right">75%</th>
+<th scope="col" class="org-right">50%</th>
+<th scope="col" class="org-right">25%</th>
+<th scope="col" class="org-right">5%</th>
+<th scope="col" class="org-right">1%</th>
+<th scope="col" class="org-right">0%</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">worst</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">&#xa0;</th>
+<th scope="col" class="org-right">best</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Log linear projections</td>
+<td class="org-right">.355</td>
+<td class="org-right">.153</td>
+<td class="org-right">.082</td>
+<td class="org-right">.042</td>
+<td class="org-right">.027</td>
+<td class="org-right">.018</td>
+<td class="org-right">.010</td>
+<td class="org-right">.006</td>
+<td class="org-right">.002</td>
+</tr>
+
+<tr>
+<td class="org-left">Linear projections</td>
+<td class="org-right">.605</td>
+<td class="org-right">.178</td>
+<td class="org-right">.086</td>
+<td class="org-right">.042</td>
+<td class="org-right">.028</td>
+<td class="org-right">.019</td>
+<td class="org-right">.010</td>
+<td class="org-right">.006</td>
+<td class="org-right">.003</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The table reveals comparatively similar performances of the linear and log-linear projections up about the 95th percentile. The log-linear bottom 5% fared much better than the linear. This led me to choose the following combination for census data projection. 
+</p>
+<ul class="org-ul">
+<li>Interpolation of inter-census year relies on the segments model.</li>
+<li>Extrapolation of years prior to the first census and years after the latest census relies on log-linear projections.</li>
+</ul>
+<p>
+Elaborate that segments 
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd8f85ae" class="outline-2">
+<h2 id="orgd8f85ae"><span class="section-number-2">5</span> Projecting with three censuses only</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+Projecting
+</p>
+
+<table id="org643dfb8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 4:</span> Municipal projection using 2005, 2010, and 2020 censuses only</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/mu5027p18-interlog-3pt.png" alt="mu5027p18-interlog-3pt.png" /></td>
+<td class="org-left"><img src="../assets/img/mu5034p18-interlog-3pt.png" alt="mu5034p18-interlog-3pt.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<table id="orgaddaac8" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 5:</span> How far off are 3-year predictions in 1995 and 2000?</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -177,7 +288,7 @@ The table below reports models' quadratic mean of errors (residuals) in census y
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-left">Percentiles</th>
+<th scope="col" class="org-left">&#xa0;</th>
 <th scope="col" class="org-right">0%</th>
 <th scope="col" class="org-right">1%</th>
 <th scope="col" class="org-right">2.5%</th>
@@ -193,54 +304,74 @@ The table below reports models' quadratic mean of errors (residuals) in census y
 </thead>
 <tbody>
 <tr>
-<td class="org-left">linear projections</td>
-<td class="org-right">.003</td>
+<td class="org-left">Log-linear 1995</td>
+<td class="org-right">.000</td>
+<td class="org-right">.002</td>
+<td class="org-right">.004</td>
 <td class="org-right">.006</td>
-<td class="org-right">.008</td>
-<td class="org-right">.010</td>
-<td class="org-right">.019</td>
-<td class="org-right">.028</td>
-<td class="org-right">.042</td>
-<td class="org-right">.086</td>
-<td class="org-right">.121</td>
-<td class="org-right">.178</td>
-<td class="org-right">.605</td>
+<td class="org-right">.035</td>
+<td class="org-right">.074</td>
+<td class="org-right">.137</td>
+<td class="org-right">.290</td>
+<td class="org-right">.410</td>
+<td class="org-right">.549</td>
+<td class="org-right">1.881</td>
 </tr>
 
 <tr>
-<td class="org-left">log linear projections</td>
+<td class="org-left">Log-linear 2000</td>
+<td class="org-right">.000</td>
+<td class="org-right">.001</td>
 <td class="org-right">.002</td>
-<td class="org-right">.006</td>
-<td class="org-right">.008</td>
+<td class="org-right">.005</td>
+<td class="org-right">.026</td>
+<td class="org-right">.056</td>
+<td class="org-right">.101</td>
+<td class="org-right">.234</td>
+<td class="org-right">.322</td>
+<td class="org-right">.511</td>
+<td class="org-right">1.228</td>
+</tr>
+
+<tr>
+<td class="org-left">Linear 1995</td>
+<td class="org-right">.000</td>
+<td class="org-right">.002</td>
+<td class="org-right">.004</td>
 <td class="org-right">.010</td>
-<td class="org-right">.018</td>
-<td class="org-right">.027</td>
-<td class="org-right">.042</td>
-<td class="org-right">.082</td>
-<td class="org-right">.111</td>
-<td class="org-right">.153</td>
-<td class="org-right">.355</td>
+<td class="org-right">.043</td>
+<td class="org-right">.092</td>
+<td class="org-right">.167</td>
+<td class="org-right">.404</td>
+<td class="org-right">.608</td>
+<td class="org-right">1.318</td>
+<td class="org-right">10.604</td>
+</tr>
+
+<tr>
+<td class="org-left">Linear 2000</td>
+<td class="org-right">.000</td>
+<td class="org-right">.001</td>
+<td class="org-right">.003</td>
+<td class="org-right">.005</td>
+<td class="org-right">.025</td>
+<td class="org-right">.052</td>
+<td class="org-right">.101</td>
+<td class="org-right">.250</td>
+<td class="org-right">.388</td>
+<td class="org-right">.661</td>
+<td class="org-right">5.185</td>
 </tr>
 </tbody>
 </table>
-
-<p>
-But led my choice to rely on the following combination:
-</p>
-
-<ul class="org-ul">
-<li>the segments model is used to interpolate inter-census years</li>
-<li>the log-linear model is used to extrapolate years prior to the first census and years after the latest.</li>
-</ul>
-<p>
-Elaborate that segments 
-</p>
 </div>
 </div>
+
+
 
 <div id="outline-container-org1a9a1e5" class="outline-2">
-<h2 id="org1a9a1e5"><span class="section-number-2">5</span> Three principles</h2>
-<div class="outline-text-2" id="text-5">
+<h2 id="org1a9a1e5"><span class="section-number-2">6</span> Three principles</h2>
+<div class="outline-text-2" id="text-6">
 <ol class="org-ol">
 <li>Projection requires a minimum of two distinct census points, to infer change in the unit.</li>
 <li>The further away temporally from a census point, the less reliable the longitudinal projection.</li>
