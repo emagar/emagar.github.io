@@ -1,0 +1,6 @@
+Ressources when dependabot wants attention (eg. bump nokogiri).
+
+1. After editing Gemfile.lock to specify a gem's specific version, need to run bundle install and bundle update in console.
+2. To install a new gem: gem install nokogiri
+3. To install a specific gem version: gem install bundler:2.2.33
+4. Good tutorial on using rvm (Ruby Version Manager): https://www.youtube.com/watch?v=cQVb7fHFjSM
