@@ -5,8 +5,8 @@ classes: wide
 title: Estimation of inter-census quantities
 # subtitle: 
 author: eric.magar
-date:   2023-06-24
-last_modified_at: 2023-06-24
+date:   2023-06-28
+last_modified_at: 2023-06-28
 toc: false
 mathjax: true
 # teaser: /assets/img/pirinola.jpg
@@ -111,20 +111,11 @@ Unlike projection by interpolating values between two known censuses, projection
 <h2 id="org59942b0"><span class="section-number-2">4</span> Linear and log-linear projections</h2>
 <div class="outline-text-2" id="text-4">
 <p>
-The further temporally apart from a census point, the less reliable any longitudinal projection becomes. But both other approaches rely on the full census series, and not just the extreme segment, when performing extrapolation beyond a limiting census. The linear approach involves regressing a unit's census values on time, thus estimating the central trend of demographic change for the full period observed. This regression line is then used to make point predictions for all non-census years. The log-linear approach does the same, but tranforming the census data to allow increasing trends in time. 
+The further temporally apart from a census point, the less reliable any longitudinal projection becomes. But both other approaches rely on the full census series, and not just the extreme segment, when performing extrapolation beyond a limiting census. The linear approach involves regressing a unit's census values on time, thus estimating the central trend of demographic change for the full period observed. The fitted regression line is then used to make point predictions for all non-census years. The log-linear approach does the same, but log-tranforming the census data to allow increasing trends in time.
 </p>
 
 <p>
-Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses from which they derive (in solid black). Regression projections do not match census points as segments did but, in most cases, they summarize the central trend neatly. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
-</p>
-
-<p>
-Secciones
-A further obstacle is that the census bureau began distribution of sección-level census aggregates only in 2005.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> So whereas five census points are available for municipal projections (1995 2000 2005 2010 2020), there are three only for secciones (2005 2010 2020). 
-</p>
-
-<p>
-Goodness of fit 
+Figure <a href="#org0a2fb23">2</a> compares linear (in blue) and log-linear (in red) regression voting age population predictions against the censuses (in solid black). Regression projections do not match census points as segments did, but they summarize the central trend neatly&#x2014;in most cases, at least. The log-tranformed approximates the Ramos Arizpe data more closely than the linear does, and this becomes clearer beyond the left and right census limits (1995 and 2020). 
 </p>
 
 <table id="org0a2fb23" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -144,7 +135,7 @@ Goodness of fit
 </table>
 
 <p>
-Pesquería municipality in Nuevo León state is a case of extremely poor regression fit. Reached in the second half of the 2010s by Monterrey's suburban area, census data are highly volatile. Such cases are present, but extremely rare. The table below reports regression models' quadratic mean of errors (residuals) in census years. Quantities are divided by the municipio's mean voting age population in the period, and this way performance statistics are expressed as shares: a Relative Quadratic Mean Residual RQMR = 0.351 in Pesquería means that predictions are 35 percent off the census observations on average. Pesquería stands at the 99.96th percentile, among the bottom four hundredths percent with poorest fit.
+Pesquería municipality in Nuevo León state is a case of extremely poor regression fit. Reached in the second half of the 2010s by Monterrey's dynamic suburban area, census data are highly volatile. Cases like this are present, but extremely rare. The table below reports regression models' quadratic mean of errors in census years. Quantities are divided by the municipio's mean voting age population in the period, thus expressing performance statistics as shares: a Relative Quadratic Mean Residual RQMR = 0.351 in Pesquería means that predictions are 35 percent off the census observations on average. Pesquería stands at the 99.96th percentile, among the bottom four hundredths percent with poorest fit.
 </p>
 
 <table id="org683de4e" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -215,16 +206,20 @@ Pesquería municipality in Nuevo León state is a case of extremely poor regress
 </table>
 
 <p>
-The table reveals comparatively similar performances of the linear and log-linear projections up about the 95th percentile. The log-linear bottom 5% fared much better than the linear. This led me to choose the following combination for census data projection. 
+The table reveals comparatively similar performances of the linear and log-linear projections up about the 95th percentile. The log-linear bottom 5%, however, fared substantially better than the linear. This led me to choose it for extrapolation. 
+</p>
+
+<p>
+I perform off-census years projections using the following combination:
 </p>
 
 <ul class="org-ul">
 <li>Interpolation: for inter-census years, I rely on the segments model.</li>
-<li>Extrapolation: for years prior to the first census and years after the latest census, I rely on log-linear projections.</li>
+<li>Extrapolation: for years prior to the first census available and years after the latest census, I rely on log-linear regression predictions.</li>
 </ul>
 
 <p>
-This combination can be seen in Figure <a href="#org93ba972">1</a>. White circles are values segment-interpolated, exes mark log-linear-extrapolated values.    
+This combination can be seen in Figure <a href="#org93ba972">1</a>.  White circles are values segment-interpolated, exes mark log-linear-extrapolated values.    
 </p>
 </div>
 </div>
@@ -232,6 +227,10 @@ This combination can be seen in Figure <a href="#org93ba972">1</a>. White circle
 <div id="outline-container-orgd8f85ae" class="outline-2">
 <h2 id="orgd8f85ae"><span class="section-number-2">5</span> Projecting with three censuses only</h2>
 <div class="outline-text-2" id="text-5">
+<p>
+A further obstacle for analysis is that the census bureau began distribution of sección-level census aggregates only in 2005.<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> So whereas five census points are available for municipal projections (six, when 1990 is added), there are three only for secciones: 2005, 2010, and 2020. 
+</p>
+
 <p>
 Extrapolation plays a limited role in municipal census projections. With five censuses to estimate from, they are needed for 1994 and 1991&#x2014;both pre-competitive era elections that are often left aside&#x2014;2021 and, soon, 2024. All are close to limit censuses, ensuring limited distortion in case inferred trends were off the mark. With three censuses only for secciones electorales, extrapolations are more in number an farther from the 2005 census. I gauge three-year projections in municipios. Having census points in 1995 and 2000 (unavailable for secciones) offers leverage to verify how far off from them land predictions made with 2005-2010-2020-only.
 </p>
@@ -340,9 +339,21 @@ Evaluation of other projection methods is desirable. Revise what demographers ha
 <p>
 The procedure extends to other socio-demographic aggregate quantities. 
 </p>
+</div>
+</div>
+
+<div id="outline-container-org27c8702" class="outline-2">
+<h2 id="org27c8702"><span class="section-number-2">6</span> References</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Ponce López, Roberto. 2009. La geografía del voto en México: organización partidista en las secciones electorales, 1997&#x2013;2003. Tesis de licenciatura, ITAM.
+</p>
 
 <p>
 Evaluating Linearly Interpolated Intercensal Estimates of Demographic and Socioeconomic Characteristics of U.S. Counties and Census Tracts 2001–2009
+</p>
+
+<p>
 Margaret M. Weden, Christine E. Peterson, Jeremy N. Miles &amp; Regina A. Shih 
 Population Research and Policy Review volume 34, pages541–559 (2015) &#x2013;&gt; pdf
 </p>
@@ -365,7 +376,7 @@ INEGI replaced mid-decade `conteos' with a sample in 2015. Conteos Generales in 
 </p></div></div>
 
 <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-Roberto Ponce (CITE) attempted to reconstruct pre-2005 sección-level census data. The challenge is matching localidades (in rural Mexico) and manzanas (in urban Mexico), which INEGI has used as census tracts, to secciones electorales nationwide. Geo-referenced units open room to spot overlaps towards such match. It is worth revising this, he may have data.    
+Ponce (2009) attempted reconstruction of pre-2005 sección-level census data. The challenge is matching localidades (in rural Mexico) and manzanas (in urban Mexico), which INEGI has used as census tracts, to secciones electorales nationwide. Geo-referenced units open room to spot overlaps towards such match. It is worth revising his data.
 </p></div></div>
 
 
