@@ -12,7 +12,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "defau
 # Site Settings
 locale                   : "es-MX" # "en-US"
 #title                    : "El blog de CiPol" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
-title                    : "Política ~decodificada~" # "Dilemas" "Democracia en México" "Blog de elecciones" "VotosVetos" "Blog de elección pública"
+title                    : "Política ~decodificada~"
 title_separator          : "|"
 
 name                     : "Eric Magar"
@@ -121,7 +121,7 @@ author:
   mastodon         :
   pinterest        :
   soundcloud       :
-  stackoverflow    : # "1269115/emagar" if your profile url is https://stackoverflow.com/users/1269115/emagar
+  stackoverflow    : "1269115/emagar" # "1269115/emagar" if your profile url is https://stackoverflow.com/users/1269115/emagar
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
   twitter          : "emagar"
