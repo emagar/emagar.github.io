@@ -197,7 +197,7 @@ I close with an important feature of the model specifications, associated with t
 <p>
 When estimating parties separately, the challenge of equations 1 and 2 is to avoid forecasting vote shares less than zero or greater than one; and that the sum of party forecasts equals 1. To achieve this, Aitchison (1986) proposes substituting vote shares by log-ratios in the analysis. Arbitrarily setting the PRI as the reference party, define party \(p\)'s vote relative to the PRI as 
 \[r_p = \frac{v_p}{v_{\text{pri}}}.\] 
-A value \(r_p=1\) would indicate a tie between the party and the PRI, while \(r_p>1\) that it finished ahead of the PRI by a proportion given by the value of \(r_p\). 
+A value \(r_p=1\) would indicate a tie between party \(p\) and the PRI, while \(r_p>1\) that \(p\) finished ahead of the PRI by a proportion given by the value of \(r_p\), and \(r_p<1\) that the PRI beat party \(p\). 
 </p>
 
 <p>
@@ -208,11 +208,11 @@ y equation 2 as
 </p>
 
 <p>
-Applying the natural logarithm attenuates the effect of extreme values of the regressor on the dependent variable, similar as a logit regression would. Model fitting was done with ordinary least squares. 
+Applying the natural logarithm attenuates the effect of extreme regressor values on the dependent variable, similar as a logit regression would. Model fitting was done with ordinary least squares. 
 </p>
 
 <p>
-Coefficient estimates must be transformed to collect party vote shares. Illustrating with a three-party case, it is trivial that 
+Log ratio estimates must be transformed to collect estimated party vote shares. Illustrating with a three-party case, it is trivial that 
 </p>
 
 \begin{equation}
