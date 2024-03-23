@@ -23,7 +23,15 @@ Un ocupante en la boleta no sólo anula, revierte el infortunio del partido del 
 </p>
 
 <p>
-Abajo aparece la muestra posterior de una estimación bayesiana del modelo de Lucardi y Rosas.
+Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. para el RD, ya tendré que superar la pereza y entender sus minucias. Por ahora estimé el <i>switching regime model</i> siguiente:
+</p>
+
+<p>
+\(Pr(y_{t+1}=1) = \text(dneg)_t * (1 + \text{margen_t}) + (1 - \text(dneg)_t) * (1 + \text{margen_t})\) 
+</p>
+
+<p>
+donde \(\text{dneg}\) indica márgenes negativos (el partido analizado no ganó en \(t\). Seleccioné municipios cerrados donde el partido analizado ganó o fue runner-up en \(t\) (\(N \approx 6.5k\)). Hice una estimación OLS con un modelo de probabilidad lineal y otra bayesiana. Abajo aparecen las estimaciones para el PAN. Se ven muy parecidas entre sí. Y aunque usan una serie de tiempo más larga que ustedes (1997-2023), también se parecen a su modelo.  
 </p>
 
 <table id="org9cf8239" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
