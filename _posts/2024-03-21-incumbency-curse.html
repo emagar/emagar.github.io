@@ -2,8 +2,8 @@
 layout: single
 # layout: splash
 classes: wide
-title: Reelección consecutica, un detente para la maldición del ocupante
-subtitle: Elecciones municipales
+title: El detente para la maldición del ocupante: reelección consecutiva
+# subtitle: Elecciones municipales
 author: eric.magar
 author_profile: true
 date: 2024-03-21
@@ -15,7 +15,7 @@ tags:
  - reelección consecutiva
  - póliza de seguro
  - voto personal
-hidden: false
+hidden: true
 # categories: Congreso
 ---
 <p>
@@ -34,7 +34,11 @@ Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. par
 </p>
 
 <p>
-donde \(\text{dneg}\) indica márgenes negativos (el partido analizado no ganó en \(t\). Seleccioné municipios cerrados donde el partido analizado ganó o fue runner-up en \(t\) (\(N \approx 6.5k\)). Hice una estimación OLS con un modelo de probabilidad lineal y otra bayesiana. Abajo aparecen las estimaciones para el PAN. Se ven muy parecidas entre sí. Y aunque usan una serie de tiempo más larga que ustedes (1997-2023), también se parecen a su modelo.  
+donde \(\text{dneg=1}\) indica márgenes negativos (esto es, que el partido analizado no ganó en \(t\)). Seleccioné municipios con márgenes cerrados (\(|\text{margen}|<.15\), como en sus plots) en los que el partido analizado ganó o fue runner-up en el año \(t\) (\(N \approx 6.5k\)). Hice una estimación OLS con un modelo de probabilidad lineal y otra bayesiana, para obtener errores de estimación. 
+</p>
+
+<p>
+Abajo aparecen las estimaciones para el PAN. Muy parecidas entre sí, y aunque usan una serie de tiempo más larga que ustedes (1997-2023), también se parecen a su modelo. 
 </p>
 
 <table id="org9cf8239" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -52,3 +56,27 @@ donde \(\text{dneg}\) indica márgenes negativos (el partido analizado no ganó 
 </tr>
 </tbody>
 </table>
+
+<p>
+Reporto el modelo BUGS, seguramente tendrás observaciones atinadas. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">###########
+## MODEL ##
+###########
+logitModel &lt;- function() {
+    ### linear probability model with logit link
+    for (n in 1:N){                ## loop over observations
+        depvar[n] ~ dbern(p[n]);   
+        logit(p[n]) &lt;- inprod(beta[],X[n,]);  ## FLEXIBLE SPECIFICATION FOR VARYING N OF REGRESSORS, PREPARE depvar AND X IN R
+    }
+    ############################
+    ## NON-INFORMATIVE PRIORS ##
+    ############################
+    for (k in 1:K){                ## loop over regressors
+        beta[k] ~ dnorm(0, .0001);
+    }
+}
+</pre>
+</div>
