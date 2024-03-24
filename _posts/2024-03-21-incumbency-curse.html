@@ -1,13 +1,13 @@
 ---
-layout: single
-# layout: splash
+# layout: single
+layout: splash
 classes: wide
-title: El detente para la maldición del ocupante: reelección consecutiva
-# subtitle: Elecciones municipales
+title: Un detente para la maldición del ocupante
+subtitle: Elecciones municipales
 author: eric.magar
-author_profile: true
+author_profile: false
 date: 2024-03-21
-# last_modified_at: 2018-05-16
+last_modified_at: 2024-03-24
 toc: false
 mathjax: false
 # teaser: /assets/img/pirinola.jpg
@@ -15,30 +15,29 @@ tags:
  - reelección consecutiva
  - póliza de seguro
  - voto personal
-hidden: true
+hidden: false
 # categories: Congreso
 ---
 <p>
-Un ocupante en la boleta no sólo anula, revierte el infortunio del partido del presidente municipal
+<i>Un incumbent en la boleta no sólo anula, <span class="underline">revierte</span> sistemáticamente el infortunio electoral del partido del presidente municipal.</i>
 </p>
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-
 <p>
-Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. para el RD, ya tendré que superar la pereza y entender sus minucias. Por ahora estimé el <i>switching regime model</i> siguiente:
+Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. para el RD, ya tendré que superar la pereza y entender sus minucias. Por ahora, estimé el <i>switching regime model</i> siguiente:
 </p>
 
 <p>
-\(Pr(y_{t+1}=1) = \text{dneg}_t * (1 + \text{margen_t}) + (1 - \text{dneg}_t) * (1 + \text{margen_t})\) 
+\(Pr(\text{win}_{t+1}=1) = \text{dneg}_t * (1 + \text{margin}_t) + (1 - \text{dneg}_t) * (1 + \text{margin}_t)\) 
 </p>
 
 <p>
-donde \(\text{dneg=1}\) indica márgenes negativos (esto es, que el partido analizado no ganó en \(t\)). Seleccioné municipios con márgenes cerrados (\(|\text{margen}|<.15\), como en sus plots) en los que el partido analizado ganó o fue runner-up en el año \(t\) (\(N \approx 6.5k\)). Hice una estimación OLS con un modelo de probabilidad lineal y otra bayesiana, para obtener errores de estimación. 
+donde \(\text{dneg=1}\) indica márgenes negativos (esto es, que el partido analizado no ganó en \(t\)). Seleccioné municipios marginales donde el partido analizado ganó o fue runner-up en el año \(t\). Hice una estimación OLS con un modelo de probabilidad lineal y, para obtener errores de estimación, otra bayesiana. 
 </p>
 
 <p>
-Abajo aparecen las estimaciones para el PAN. Muy parecidas entre sí, y aunque usan una serie de tiempo más larga que ustedes (1997-2023), también se parecen a su modelo. 
+Abajo aparecen las estimaciones del PAN (\(N \approx 4.7k\)). Muy parecidas entre sí y, aunque usan una serie de tiempo más larga que ustedes (1997-2023), también se parecen a sus resultados.
 </p>
 
 <table id="org9cf8239" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -58,9 +57,45 @@ Abajo aparecen las estimaciones para el PAN. Muy parecidas entre sí, y aunque u
 </table>
 
 <p>
-Reporto el modelo BUGS, seguramente tendrás observaciones atinadas. 
+Luego hice adecuaciones. Recorté el margen a $&plusmn;$10%, como en la literatura americanista. Y metí dummies e interacciones del efecto post-reforma: el modelo lineal que cambia de régimen es \((1 + \text{dinc}_t + \text{margin}_t + \text{dinc}_t \times \text{margin}_t)\), donde \(\text{dinc}=1\) indica un ocupante en la boleta (propio si el margen es positivo, ajeno si negativo). Abajo los plots de estas estimaciones.
 </p>
 
+<table id="org9ba9b1d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Tabla 2</span> Modelos que controlan la reelección consecutiva</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="../assets/img/pan-97-23-mcmc.png" alt="pan-97-23-mcmc.png" /></td>
+<td class="org-left"><img src="../assets/img/pri-97-23-mcmc.png" alt="pri-97-23-mcmc.png" /></td>
+</tr>
+
+<tr>
+<td class="org-left"><img src="../assets/img/left-97-23-mcmc.png" alt="left-97-23-mcmc.png" /></td>
+<td class="org-left"><img src="../assets/img/left-18-23-mcmc.png" alt="left-18-23-mcmc.png" /></td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Destaca la brecha en ordenadas al origen, o sea la maldición del partido ocupante. En la lectura conservadora, con presidente municipal en la boleta desaparece en términos estadísticos. Y en todos los casos se invierte el sentido de la brecha, aunque con evidencia mixta.
+</p>
+
+<p>
+Además de un paper, me parece conveniente intentar publicitar este efecto. Entre los 100 comprimisos de Sheinbaum está eliminar la reelección. Si el efecto fuera real, es fácil argumentar que la contrarreforma es un tiro al pie. Un incumbent en la boleta sería una póliza de seguro contra swings partidistas negativos, como el 2021 de Morena. O como el que sufren todos al final del mandato municipal.
+</p>
+
+<p>
+¿Cómo ves esto? EL elefante en el cuarto es la sobredeterminación: la posreforma coincide casi perfecto con el colapso del sistema electoral mexicano.
+</p>
+
+<div id="outline-container-orgb4c3caf" class="outline-2">
+<h2 id="orgb4c3caf"><span class="section-number-2">1.</span> El modelo BUGS</h2>
+<div class="outline-text-2" id="text-1">
 <div class="org-src-container">
 <pre class="src src-R">###########
 ## MODEL ##
@@ -79,4 +114,6 @@ logitModel &lt;- function() {
     }
 }
 </pre>
+</div>
+</div>
 </div>
