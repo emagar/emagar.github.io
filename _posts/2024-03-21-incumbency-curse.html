@@ -29,7 +29,7 @@ Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. par
 </p>
 
 <p>
-\(Pr(\text{win}_{t+1}=1) = \text{dneg}_t * (1 + \text{margin}_t) + (1 - \text{dneg}_t) * (1 + \text{margin}_t)\) 
+\(Pr(\text{win}_{t+1}=1) = \text{dneg}_t * (\alpha_0 + \alpha_1 \text{margin}_t) + (1 - \text{dneg}_t) * (\beta_0 + \beta_1 \text{margin}_t)\) 
 </p>
 
 <p>
@@ -61,7 +61,7 @@ Luego hice adecuaciones. Recorté el margen a $&plusmn;$10%, como en la literatu
 </p>
 
 <table id="org9ba9b1d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption class="t-above"><span class="table-number">Tabla 2</span> Modelos que controlan la reelección consecutiva</caption>
+<caption class="t-above"><span class="table-number">Tabla 2</span> Cuando controlas la reelección consecutiva</caption>
 
 <colgroup>
 <col  class="org-left" />
@@ -93,9 +93,13 @@ Además de un paper, me parece conveniente intentar publicitar este efecto. Entr
 ¿Cómo ves esto? EL elefante en el cuarto es la sobredeterminación: la posreforma coincide casi perfecto con el colapso del sistema electoral mexicano.
 </p>
 
-<div id="outline-container-org42c92f4" class="outline-2">
-<h2 id="org42c92f4"><span class="section-number-2">1.</span> Prueba de cambio de ordenada al origen</h2>
+<div id="outline-container-orga26c77d" class="outline-2">
+<h2 id="orga26c77d"><span class="section-number-2">1.</span> Brecha antiocupante, prueba de cambio de ordenada al origen</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+Con silla vacía, &beta;<sub>0</sub> &lt; &alpha;<sub>0</sub> en la totalidad de 1,500 muestras posteriores, la maldición del partido ocupante. En cambio, cuando el presidente municipal buscó reelegirse, (&beta;<sub>0</sub> + &beta;<sub>1</sub>) &lt; (&alpha;<sub>0</sub> + &alpha;<sub>1</sub>) en una quinta parte o menos de la muestra posterior. O lo equivalente: la brecha se invierte en cuatro-quintas partes o más. No es poca cosa. 
+</p>
+
 <p>
 Cells report the share of the posterior sample.
 </p>
@@ -114,15 +118,22 @@ Cells report the share of the posterior sample.
 <thead>
 <tr>
 <th scope="col" class="org-left">&#xa0;</th>
-<th scope="col" class="org-right">brecha antiocupante</th>
-<th scope="col" class="org-right">brecha antiocupante</th>
+<th scope="col" class="org-right">brecha sin</th>
+<th scope="col" class="org-right">brecha con</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">ocupante en la boleta</th>
+<th scope="col" class="org-right">ocupante en la boleta</th>
 <th scope="col" class="org-left">&#xa0;</th>
 </tr>
 
 <tr>
 <th scope="col" class="org-left">Partido</th>
-<th scope="col" class="org-right">(dpos - dneg) &lt; 0</th>
-<th scope="col" class="org-right">(dpos+dposxinc)-(dneg+dnegxinc) &lt; 0</th>
+<th scope="col" class="org-right">&beta;<sub>0</sub> &lt; &alpha;<sub>0</sub></th>
+<th scope="col" class="org-right">(&beta;<sub>0</sub> + &beta;<sub>1</sub>) &lt; (&alpha;<sub>0</sub> + &alpha;<sub>1</sub>)</th>
 <th scope="col" class="org-left">N</th>
 </tr>
 </thead>
