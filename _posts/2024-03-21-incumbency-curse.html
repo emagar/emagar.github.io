@@ -93,9 +93,75 @@ Además de un paper, me parece conveniente intentar publicitar este efecto. Entr
 ¿Cómo ves esto? EL elefante en el cuarto es la sobredeterminación: la posreforma coincide casi perfecto con el colapso del sistema electoral mexicano.
 </p>
 
-<div id="outline-container-orgb4c3caf" class="outline-2">
-<h2 id="orgb4c3caf"><span class="section-number-2">1.</span> El modelo BUGS</h2>
+<div id="outline-container-org42c92f4" class="outline-2">
+<h2 id="org42c92f4"><span class="section-number-2">1.</span> Prueba de cambio de ordenada al origen</h2>
 <div class="outline-text-2" id="text-1">
+<p>
+Cells report the share of the posterior sample.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">brecha antiocupante</th>
+<th scope="col" class="org-right">brecha antiocupante</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+
+<tr>
+<th scope="col" class="org-left">Partido</th>
+<th scope="col" class="org-right">(dpos - dneg) &lt; 0</th>
+<th scope="col" class="org-right">(dpos+dposxinc)-(dneg+dnegxinc) &lt; 0</th>
+<th scope="col" class="org-left">N</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">PAN 1997-2023</td>
+<td class="org-right">1.000</td>
+<td class="org-right">0.197</td>
+<td class="org-left">4,758</td>
+</tr>
+
+<tr>
+<td class="org-left">PRI 1997-2023</td>
+<td class="org-right">1.000</td>
+<td class="org-right">0.146</td>
+<td class="org-left">7,293</td>
+</tr>
+
+<tr>
+<td class="org-left">Left 1997-2023</td>
+<td class="org-right">1.000</td>
+<td class="org-right">0.199</td>
+<td class="org-left">2,889</td>
+</tr>
+
+<tr>
+<td class="org-left">Left 2018-2023</td>
+<td class="org-right">1.000</td>
+<td class="org-right">0.203</td>
+<td class="org-left">394</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgb4c3caf" class="outline-2">
+<h2 id="orgb4c3caf"><span class="section-number-2">2.</span> El modelo BUGS</h2>
+<div class="outline-text-2" id="text-2">
 <div class="org-src-container">
 <pre class="src src-R">###########
 ## MODEL ##
