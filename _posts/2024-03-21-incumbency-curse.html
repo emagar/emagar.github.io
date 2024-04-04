@@ -24,8 +24,11 @@ hidden: false
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+<div id="outline-container-org1e74a27" class="outline-2">
+<h2 id="org1e74a27"><span class="section-number-2">1.</span> Réplica de Lucardi y Rosas</h2>
+<div class="outline-text-2" id="text-1">
 <p>
-Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. para el RD, ya tendré que superar la pereza y entender sus minucias técnicas. Por ahora, estimé el <i>switching regime model</i> siguiente:
+Intenté replicar aproximadamente tu paper con Adrián. No usé Calónico et al. para el RD &#x2014; ya tendré que superar la pereza y entender sus minucias técnicas. Por ahora, estimé el <i>switching regime model</i> siguiente:
 </p>
 
 <p>
@@ -55,7 +58,12 @@ Abajo aparecen las estimaciones del PAN (\(N \approx 4.7k\)). Muy parecidas entr
 </tr>
 </tbody>
 </table>
+</div>
+</div>
 
+<div id="outline-container-orgc6582e8" class="outline-2">
+<h2 id="orgc6582e8"><span class="section-number-2">2.</span> Enmiendas</h2>
+<div class="outline-text-2" id="text-2">
 <p>
 Luego hice adecuaciones. Recorté el margen a \(\pm\) 10%, como en la literatura americanista. Y metí dummies e interacciones del efecto post-reforma: el modelo lineal que cambia de régimen es \((\alpha_0 + \alpha_1 \text{dinc}_t + \alpha_2 \text{margin}_t + \alpha_3 \text{dinc}_t \times \text{margin}_t)\), donde \(\text{dinc}=1\) indica un ocupante en la boleta (propio si el margen es positivo, ajeno si negativo). Abajo los plots de estas estimaciones.
 </p>
@@ -82,31 +90,7 @@ Luego hice adecuaciones. Recorté el margen a \(\pm\) 10%, como en la literatura
 </table>
 
 <p>
-Destaca la brecha en ordenadas al origen, o sea la maldición del partido ocupante. En la lectura conservadora, con presidente municipal en la boleta desaparece en términos estadísticos. Y en todos los casos se invierte el sentido de la brecha, aunque con evidencia mixta.
-</p>
-
-<p>
-Además de un paper, me parece conveniente intentar publicitar este efecto. Entre los 100 comprimisos de Sheinbaum está eliminar la reelección. Si el efecto fuera real, es fácil argumentar que la contrarreforma es un tiro al pie. Un incumbent en la boleta sería una póliza de seguro contra swings partidistas negativos, como el 2021 de Morena. O como el que sufren todos al final del mandato municipal.
-</p>
-
-<p>
-¿Cómo ves esto? El elefante en la habitación es la sobredeterminación: la posreforma reeleccionista coincide casi perfectamente con el colapso del sistema de partidos.
-</p>
-
-<div id="outline-container-org9d575b6" class="outline-2">
-<h2 id="org9d575b6"><span class="section-number-2">1.</span> Duda puntual</h2>
-<div class="outline-text-2" id="text-1">
-<p>
-No entiendo el criterio de selección de casos para el modelo de 'incumbents'. La nota de su TABLA 1 dice que, para estimar p(win<sub>t+1</sub>) incluyen todos los partidos ocupantes en t que también compitieron en la elección del municipio en t-1 (esto es, tres contiendas simultáneas). Esto pobla el rango positivo de margen<sub>t</sub>. Con varios partidos agrupados en el análisis ¿qué es el margen negativo?
-</p>
-</div>
-</div>
-
-<div id="outline-container-orga26c77d" class="outline-2">
-<h2 id="orga26c77d"><span class="section-number-2">2.</span> Brecha antiocupante, prueba de cambio de ordenada al origen</h2>
-<div class="outline-text-2" id="text-2">
-<p>
-Con silla vacía, &beta;<sub>0</sub> &lt; &alpha;<sub>0</sub> en la totalidad de 1,500 muestras posteriores, la maldición del partido ocupante. En cambio, cuando el presidente municipal buscó reelegirse, (&beta;<sub>0</sub> + &beta;<sub>1</sub>) &lt; (&alpha;<sub>0</sub> + &alpha;<sub>1</sub>) en sólo la quinta parte o menos de la muestra posterior. O lo equivalente: la brecha se invierte cuatro de cinco veces, o más. No es poca cosa. Un alcalde en la boleta es una póliza de seguro contra swings partidistas negativos.
+Destaca la brecha en ordenadas al origen, o sea la maldición del partido ocupante. En la lectura conservadora, con presidente municipal en la boleta desaparece en términos estadísticos. Y en todos los casos se invierte el sentido de la brecha antiocupante, aunque con evidencia mixta. Con silla vacía, &beta;<sub>0</sub> &lt; &alpha;<sub>0</sub> en la totalidad de 1,500 muestras posteriores, la maldición del partido ocupante. En cambio, cuando el presidente municipal buscó reelegirse, (&beta;<sub>0</sub> + &beta;<sub>1</sub>) &lt; (&alpha;<sub>0</sub> + &alpha;<sub>1</sub>) en sólo la quinta parte o menos de la muestra posterior. O lo equivalente: la brecha se invierte cuatro de cinco veces, o más. No es poca cosa. Un alcalde en la boleta es una póliza de seguro contra swings partidistas negativos.
 </p>
 
 <p>
@@ -179,9 +163,31 @@ Cells report the share of the posterior sample.
 </div>
 </div>
 
-<div id="outline-container-orgb4c3caf" class="outline-2">
-<h2 id="orgb4c3caf"><span class="section-number-2">3.</span> El modelo BUGS</h2>
+<div id="outline-container-orge15303b" class="outline-2">
+<h2 id="orge15303b"><span class="section-number-2">3.</span> Posibilidad de incidir en el ánimo contrarreformista</h2>
 <div class="outline-text-2" id="text-3">
+<p>
+Además de un paper, me parece conveniente intentar publicitar este efecto. Entre los 100 comprimisos de Sheinbaum está eliminar la reelección. Si el efecto fuera real, es fácil argumentar que la contrarreforma es un tiro al pie. La reelección consecutiva como póliza de seguro contra swings partidistas negativos, como el 2021 de Morena. O como el que sufren todos al final del mandato municipal.
+</p>
+
+<p>
+¿Cómo ves esto? El elefante en la habitación es la sobredeterminación: la posreforma reeleccionista coincide casi perfectamente con el colapso del sistema de partidos.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9d575b6" class="outline-2">
+<h2 id="org9d575b6"><span class="section-number-2">4.</span> Duda puntual</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+No entiendo el criterio de selección de casos para el modelo de 'incumbents'. La nota de su TABLA 1 dice que, para estimar p(win<sub>t+1</sub>) incluyen todos los partidos ocupantes en t que también compitieron en la elección del municipio en t-1 (esto es, tres contiendas simultáneas). Esto pobla el rango positivo de margen<sub>t</sub>. Con varios partidos agrupados en el análisis ¿qué es el margen negativo?
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb4c3caf" class="outline-2">
+<h2 id="orgb4c3caf"><span class="section-number-2">5.</span> El modelo BUGS</h2>
+<div class="outline-text-2" id="text-5">
 <div class="org-src-container">
 <pre class="src src-R">###########
 ## MODEL ##
