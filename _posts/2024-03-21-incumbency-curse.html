@@ -7,7 +7,7 @@ subtitle: Elecciones municipales
 author: eric.magar
 author_profile: false
 date: 2024-03-21
-last_modified_at: 2024-03-24
+last_modified_at: 2024-04-04
 toc: false
 mathjax: false
 # teaser: /assets/img/pirinola.jpg
@@ -19,17 +19,17 @@ hidden: false
 # categories: Congreso
 ---
 <p>
-<i>Un incumbent en la boleta anula sistemáticamente, y quizás revierta el infortunio electoral del partido del presidente municipal.</i>
+<i>Un incumbent en la boleta anula sistemáticamente, y quizás hasta invierta, el infortunio electoral del partido del alcalde.</i>
 </p>
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 <p>
-Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. para el RD, ya tendré que superar la pereza y entender sus minucias. Por ahora, estimé el <i>switching regime model</i> siguiente:
+Hice réplicas aproximadas de tu paper con Adrián. No usé Calónico et al. para el RD, ya tendré que superar la pereza y entender sus minucias técnicas. Por ahora, estimé el <i>switching regime model</i> siguiente:
 </p>
 
 <p>
-\(Pr(\text{win}_{t+1}=1) = \text{dneg}_t * (\alpha_0 + \alpha_1 \text{margin}_t) + (1 - \text{dneg}_t) * (\beta_0 + \beta_1 \text{margin}_t)\) 
+\(Pr(\text{win}_{t+1}=1) = \text{dneg}_t * (\alpha_0 + \alpha_2 \text{margin}_t) + (1 - \text{dneg}_t) * (\beta_0 + \beta_2 \text{margin}_t)\) 
 </p>
 
 <p>
@@ -57,7 +57,7 @@ Abajo aparecen las estimaciones del PAN (\(N \approx 4.7k\)). Muy parecidas entr
 </table>
 
 <p>
-Luego hice adecuaciones. Recorté el margen a $&plusmn;$10%, como en la literatura americanista. Y metí dummies e interacciones del efecto post-reforma: el modelo lineal que cambia de régimen es \((1 + \text{dinc}_t + \text{margin}_t + \text{dinc}_t \times \text{margin}_t)\), donde \(\text{dinc}=1\) indica un ocupante en la boleta (propio si el margen es positivo, ajeno si negativo). Abajo los plots de estas estimaciones.
+Luego hice adecuaciones. Recorté el margen a \(\pm\) 10%, como en la literatura americanista. Y metí dummies e interacciones del efecto post-reforma: el modelo lineal que cambia de régimen es \((\alpha_0 + \alpha_1 \text{dinc}_t + \alpha_2 \text{margin}_t + \alpha_3 \text{dinc}_t \times \text{margin}_t)\), donde \(\text{dinc}=1\) indica un ocupante en la boleta (propio si el margen es positivo, ajeno si negativo). Abajo los plots de estas estimaciones.
 </p>
 
 <table id="org9ba9b1d" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
@@ -97,7 +97,7 @@ Además de un paper, me parece conveniente intentar publicitar este efecto. Entr
 <h2 id="org9d575b6"><span class="section-number-2">1.</span> Duda puntual</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-No entiendo el criterio de selección de casos para el modelo de 'incumbents'. La nota de su TABLA 1 dice que, para estimar p(win<sub>t</sub>+1) incluyen todos los partidos ocupantes en t que también compitieron en la elección del municipio en t-1 (esto es, tres contiendas simultáneas). Esto pobla el rango positivo de margen<sub>t</sub>. Con varios partidos agrupados en el análisis ¿qué es el margen negativo?
+No entiendo el criterio de selección de casos para el modelo de 'incumbents'. La nota de su TABLA 1 dice que, para estimar p(win<sub>t+1</sub>) incluyen todos los partidos ocupantes en t que también compitieron en la elección del municipio en t-1 (esto es, tres contiendas simultáneas). Esto pobla el rango positivo de margen<sub>t</sub>. Con varios partidos agrupados en el análisis ¿qué es el margen negativo?
 </p>
 </div>
 </div>
@@ -106,7 +106,7 @@ No entiendo el criterio de selección de casos para el modelo de 'incumbents'. L
 <h2 id="orga26c77d"><span class="section-number-2">2.</span> Brecha antiocupante, prueba de cambio de ordenada al origen</h2>
 <div class="outline-text-2" id="text-2">
 <p>
-Con silla vacía, &beta;<sub>0</sub> &lt; &alpha;<sub>0</sub> en la totalidad de 1,500 muestras posteriores, la maldición del partido ocupante. En cambio, cuando el presidente municipal buscó reelegirse, (&beta;<sub>0</sub> + &beta;<sub>1</sub>) &lt; (&alpha;<sub>0</sub> + &alpha;<sub>1</sub>) en una quinta parte o menos de la muestra posterior. O lo equivalente: la brecha se invierte en cuatro-quintas partes o más. No es poca cosa. 
+Con silla vacía, &beta;<sub>0</sub> &lt; &alpha;<sub>0</sub> en la totalidad de 1,500 muestras posteriores, la maldición del partido ocupante. En cambio, cuando el presidente municipal buscó reelegirse, (&beta;<sub>0</sub> + &beta;<sub>1</sub>) &lt; (&alpha;<sub>0</sub> + &alpha;<sub>1</sub>) en sólo la quinta parte o menos de la muestra posterior. O lo equivalente: la brecha se invierte cuatro de cinco veces, o más. No es poca cosa. Un alcalde en la boleta es una póliza de seguro contra swings partidistas negativos.
 </p>
 
 <p>
