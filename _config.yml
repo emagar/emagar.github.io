@@ -86,6 +86,7 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
     - "https://twitter.com/emagar"
+    - "https://bsky.app/emagar"
     - "https://www.linkedin.com/in/ericmagar/"
     - "https://plus.google.com/emagar"
 
