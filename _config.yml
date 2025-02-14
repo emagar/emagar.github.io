@@ -121,6 +121,7 @@ author:
   lastfm           :
   linkedin         : "ericmagar" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   mastodon         :
+  orcid            : "0000-0002-6766-1677" # https://orcid.org/0000-0002-6766-1677
   pinterest        :
   soundcloud       :
   stackoverflow    : "1269115/emagar" # "1269115/emagar" if your profile url is https://stackoverflow.com/users/1269115/emagar
