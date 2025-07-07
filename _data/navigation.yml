@@ -1,4 +1,3 @@
-# main links
 main:
   - title: "Eric Magar"
     url: /about/ 
@@ -43,10 +42,10 @@ prof:
   - title: "Election data in Gsheets"
     url: /view-in-gSheets/
 #  - title: "Talks"
- - title: "Diversión/fun"
+  - title: "Diversión/fun"
     children:
       - title: "Rento depto. frente al mar"
-        url: /viento/
+        url: _pages/viento/
 #  - title: "Links"
 
 
