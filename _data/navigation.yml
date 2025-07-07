@@ -17,9 +17,9 @@ main:
   #   url: /sitemap/
 
 prof:
-  - title: "About"
+  - title: "Acerca de mí/About"
     url: /about/
-  - title: "Contact"
+  - title: "Contacto"
     url: /contact/
   - title: "CV"
     url: /cv/
@@ -30,6 +30,8 @@ prof:
     #     url: https://github.com/emagar/cv/blob/master/cvEspanol.pdf
   - title: "Cursos/classes" 
     children:
+      - title: "Intro. a CPol"
+        url: https://github.com/emagar/icp
       - title: "Elección Pública III"
         url: https://github.com/emagar/ep3
       - title: "Política Comparada II"
@@ -41,7 +43,10 @@ prof:
   - title: "Election data in Gsheets"
     url: /view-in-gSheets/
 #  - title: "Talks"
-#  - title: "Fun"
+ - title: "Diversión/fun"
+    children:
+      - title: "Rento depto. frente al mar"
+        url: /viento/
 #  - title: "Links"
 
 
